@@ -13,7 +13,9 @@
   </p>
 </p>
 
-![Contributors](https://img.shields.io/github/contributors/Emilly666/Water-your-plants-app?color=dark-green) ![Stargazers](https://img.shields.io/github/stars/Emilly666/Water-your-plants-app?style=social) 
+![Contributors](https://img.shields.io/github/contributors/Emilly666/Water-your-plants-app?color=dark-green) 
+![Stargazers](https://img.shields.io/github/stars/Emilly666/Water-your-plants-app?style=social) 
+![License](https://img.shields.io/github/license/Emilly666/Water-your-plants-app) 
 
 Do you want to learn how to take properly take care of your plants? It is the app for you.
 
