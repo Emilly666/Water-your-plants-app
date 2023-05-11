@@ -14,9 +14,9 @@ public class ViewPagerAdapter extends FragmentStateAdapter {
     @Override
     public Fragment createFragment(int position) {
         if(position == 0){
-            return new TodayFragment();
-        } else if (position == 1) {
             return new CalendarFragment();
+        } else if (position == 1) {
+            return new TodayFragment();
         } else if (position == 2) {
             return new PlantsFragment();
         }

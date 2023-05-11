@@ -3,7 +3,7 @@
     <color name="ic_launcher_background">@color/off_white</color>
 
     <color name="off_white">#f7fde8</color>
-    <color name="yellow_lighter">#fffc94</color>
+    <color name="yellow_lighter">#FFFDBB</color>
     <color name="yellow_darker">#fffb6f</color>
     <color name="green_lighter">#bfe865</color>
     <color name="green_darker">#74be1d</color>
@@ -12,4 +12,6 @@
 
     <color name="black">#000000</color>
     <color name="white">#FFFFFF</color>
+
+    <color name="supportActionBarColor">?attr/colorPrimary</color>
 </resources>

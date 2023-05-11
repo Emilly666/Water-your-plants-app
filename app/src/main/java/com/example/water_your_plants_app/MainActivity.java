@@ -3,8 +3,9 @@ package com.example.water_your_plants_app;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager2.widget.ViewPager2;
 
-import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.LinearLayout;
 
 import com.google.android.material.tabs.TabLayout;
 
@@ -25,6 +26,8 @@ public class MainActivity extends AppCompatActivity {
         viewPager2 = findViewById(R.id.viewPager2);
         adapter = new ViewPagerAdapter(this);
         viewPager2.setAdapter(adapter);
+        viewPager2.setCurrentItem(1,false);
+        Objects.requireNonNull(tabLayout.getTabAt(1)).select();
 
         tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
@@ -41,8 +44,13 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onPageSelected(int position) {
                 super.onPageSelected(position);
-                tabLayout.getTabAt(position).select();
+                Objects.requireNonNull(tabLayout.getTabAt(position)).select();
             }
         });
+    }
+
+    public void expandTaskItem(View view) {
+        LinearLayout layout = view.findViewById(R.id.linear);
+        layout.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT));
     }
 }

@@ -10,7 +10,7 @@
         <item name="colorSecondaryVariant">@color/green_lighter</item>
         <item name="colorOnSecondary">@color/off_black_on_primary</item>
         <!-- Status bar color. -->
-        <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
+        <item name="android:statusBarColor">@color/off_black_on_primary</item>
         <!-- Customize your theme here. -->
         <item name="android:colorBackground">@color/off_black_on_primary</item>
         <item name="android:textColorPrimary">@color/off_black_on_secondary</item>
