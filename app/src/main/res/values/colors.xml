@@ -7,8 +7,8 @@
     <color name="yellow_darker">#fffb6f</color>
     <color name="green_lighter">#bfe865</color>
     <color name="green_darker">#74be1d</color>
-    <color name="off_black1">#2a2a2a</color>
-    <color name="off_black2">#2b3023</color>
+    <color name="off_black_on_primary">#2a2a2a</color>
+    <color name="off_black_on_secondary">#2b3023</color>
 
     <color name="black">#000000</color>
     <color name="white">#FFFFFF</color>
