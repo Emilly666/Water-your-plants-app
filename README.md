@@ -1,7 +1,7 @@
 <br/>
 <p align="center">
   <a href="https://github.com/Emilly666/Water-your-plants-app">
-    <img src="[https://www.strunkmedia.com/wp-content/uploads/2018/05/bigstock-221516158.jpg](https://cdn.discordapp.com/attachments/1103761225973776413/1106299881343172729/ic_launcher_round.png)" alt="Logo" width="100" height="100">
+    <img src="https://cdn.discordapp.com/attachments/1103761225973776413/1106299881343172729/ic_launcher_round.png)" alt="Logo" width="100" height="100">
   </a>
 
   <h3 align="center">WYDP - Water Your Damn Plants</h3>
