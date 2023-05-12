@@ -2,12 +2,12 @@
                 <!-- Dark theme -->
     <style name="Theme.Wateryourplantsapp" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/yellow_lighter</item>
-        <item name="colorPrimaryVariant">@color/yellow_darker</item>
+        <item name="colorPrimary">@color/green_darker</item>
+        <item name="colorPrimaryVariant">@color/green_lighter</item>
         <item name="colorOnPrimary">@color/off_black_on_secondary</item>
         <!-- Secondary brand color. -->
-        <item name="colorSecondary">@color/green_darker</item>
-        <item name="colorSecondaryVariant">@color/green_lighter</item>
+        <item name="colorSecondary">@color/yellow_lighter</item>
+        <item name="colorSecondaryVariant">@color/yellow_darker</item>
         <item name="colorOnSecondary">@color/off_black_on_primary</item>
         <!-- Status bar color. -->
         <item name="android:statusBarColor">@color/off_black_on_primary</item>
