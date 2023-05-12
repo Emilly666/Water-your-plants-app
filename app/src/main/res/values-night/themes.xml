@@ -4,11 +4,11 @@
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/green_darker</item>
         <item name="colorPrimaryVariant">@color/green_lighter</item>
-        <item name="colorOnPrimary">@color/off_black_on_primary</item>
+        <item name="colorOnPrimary">@color/off_black_on_secondary</item>
         <!-- Secondary brand color. -->
-        <item name="colorSecondary">@color/yellow_darker</item>
-        <item name="colorSecondaryVariant">@color/yellow_lighter</item>
-        <item name="colorOnSecondary">@color/off_black_on_secondary</item>
+        <item name="colorSecondary">@color/yellow_lighter</item>
+        <item name="colorSecondaryVariant">@color/yellow_darker</item>
+        <item name="colorOnSecondary">@color/off_black_on_primary</item>
         <!-- Status bar color. -->
         <item name="android:statusBarColor">@color/off_black_on_primary</item>
         <!-- Customize your theme here. -->
