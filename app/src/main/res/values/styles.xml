@@ -2,13 +2,10 @@
 <resources>
     <style name="TabTheme" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
         <item name="tabIndicatorColor">?attr/colorPrimaryVariant</item>
-        <item name="tabIndicatorHeight">47dp</item>
-        <item name="tabIndicatorGravity">top</item>
         <item name="tabSelectedTextColor">?attr/colorOnPrimary</item>
         <item name="textFillColor">?attr/colorOnPrimary</item>
         <item name="tabIconTint">?attr/colorOnPrimary</item>
     </style>
-
     <style name="ViewPager2" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
 
     </style>

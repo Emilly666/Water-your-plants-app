@@ -14,7 +14,7 @@
         style="@style/TabTheme"
         android:id="@+id/tab"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="wrap_content"
         android:background="?attr/colorPrimary"
         app:layout_constraintTop_toTopOf="parent"
         app:tabIndicatorHeight="48dp"
