@@ -1,11 +1,16 @@
 package com.example.water_your_plants_app;
 
-public class Task {
-    private final int VIEW_TYPE_ITEM_WATER = 0;
-    private final int VIEW_TYPE_ITEM_FERTILIZE = 1;
+import java.util.Date;
 
-    private final int type;
+public class Task {
     private boolean expanded = false;
+    private final int type; //0 = WATER //1 = FERTILIZE
+
+    private int task_id;
+    private Date date;
+    private String plantNickname;
+    private String fertilizerType;
+
 
     public Task(int type){
         this.type = type;

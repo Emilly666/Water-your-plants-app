@@ -14,7 +14,7 @@
         <item name="android:padding">15dp</item>
         <item name="iconSize">24dp</item>
         <item name="iconGravity">end</item>
-        <item name="background">?attr/colorPrimary</item>
+        <item name="backgroundTint">?attr/colorSecondary</item>
     </style>
 
 </resources>

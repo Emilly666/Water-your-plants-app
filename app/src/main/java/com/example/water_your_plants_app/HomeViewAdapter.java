@@ -69,21 +69,39 @@ public class HomeViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
     private void populateItemRows(ItemViewHolder viewHolder, int position) {
 
         viewHolder.linear.setVisibility(View.GONE);
-        viewHolder.button4.setCompoundDrawablesWithIntrinsicBounds(0, 0, R.drawable.baseline_arrow_drop_down_24, 0);
 
-        viewHolder.button4.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if(mItemList.get(position).isExpanded()){
-                    viewHolder.linear.setVisibility(View.GONE);
-                    viewHolder.button4.setCompoundDrawablesWithIntrinsicBounds(0, 0, R.drawable.baseline_arrow_drop_down_24, 0);
-                    mItemList.get(position).setExpanded(false);
-                }else{
-                    viewHolder.linear.setVisibility(View.VISIBLE);
-                    viewHolder.button4.setCompoundDrawablesWithIntrinsicBounds(0, 0, R.drawable.baseline_arrow_drop_up_24, 0);
-                    mItemList.get(position).setExpanded(true);
+        if(mItemList.get(position).getType() == VIEW_TYPE_ITEM_WATER){
+            viewHolder.button4.setCompoundDrawablesWithIntrinsicBounds(R.drawable.watering_can_24, 0, R.drawable.baseline_arrow_drop_down_24, 0);
+            viewHolder.button4.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    if(mItemList.get(position).isExpanded()){
+                        viewHolder.linear.setVisibility(View.GONE);
+                        viewHolder.button4.setCompoundDrawablesWithIntrinsicBounds(R.drawable.watering_can_24, 0, R.drawable.baseline_arrow_drop_down_24, 0);
+                        mItemList.get(position).setExpanded(false);
+                    }else{
+                        viewHolder.linear.setVisibility(View.VISIBLE);
+                        viewHolder.button4.setCompoundDrawablesWithIntrinsicBounds(R.drawable.watering_can_24, 0, R.drawable.baseline_arrow_drop_up_24, 0);
+                        mItemList.get(position).setExpanded(true);
+                    }
                 }
-            }
-        });
+            });
+        }else{
+            viewHolder.button4.setCompoundDrawablesWithIntrinsicBounds(R.drawable.fertilizer_24, 0, R.drawable.baseline_arrow_drop_down_24, 0);
+            viewHolder.button4.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    if(mItemList.get(position).isExpanded()){
+                        viewHolder.linear.setVisibility(View.GONE);
+                        viewHolder.button4.setCompoundDrawablesWithIntrinsicBounds(R.drawable.fertilizer_24, 0, R.drawable.baseline_arrow_drop_down_24, 0);
+                        mItemList.get(position).setExpanded(false);
+                    }else{
+                        viewHolder.linear.setVisibility(View.VISIBLE);
+                        viewHolder.button4.setCompoundDrawablesWithIntrinsicBounds(R.drawable.fertilizer_24, 0, R.drawable.baseline_arrow_drop_up_24, 0);
+                        mItemList.get(position).setExpanded(true);
+                    }
+                }
+            });
+        }
     }
 }
