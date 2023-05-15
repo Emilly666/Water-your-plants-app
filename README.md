@@ -28,7 +28,19 @@ Do you want to learn how to take properly take care of your plants? It is the ap
 
 Get notifications to remind you about taking care of your plants.
 
+## Roadmap
 
+- [x] Graphic design
+- [x] Logo
+- [x] Database project
+- [ ] Calendar
+- [ ] Database
+- [ ] Plants list
+- [ ] Home tasks list
+- [ ] Adding plants
+- [ ] Adding custom plants
+- [ ] Generating tasks lists and filling calendar
+- [ ] Push notifications
 
 ## Authors
 
