@@ -16,12 +16,12 @@ public class ViewPagerAdapter extends FragmentStateAdapter {
         if(position == 0){
             return new CalendarFragment();
         } else if (position == 1) {
-            return new TodayFragment();
+            return new HomeFragment();
         } else if (position == 2) {
             return new PlantsFragment();
         }
         else {
-            return new TodayFragment();
+            return new HomeFragment();
         }
     }
 

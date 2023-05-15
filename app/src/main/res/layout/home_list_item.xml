@@ -7,7 +7,7 @@
 
     <Button
         android:id="@+id/button4"
-        style="@style/TodayListItem"
+        style="@style/HomeListItem"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
