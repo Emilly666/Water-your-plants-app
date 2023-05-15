@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="TabTheme" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+        <item name="tabIndicatorColor">?attr/colorPrimaryVariant</item>
+        <item name="tabSelectedTextColor">?attr/colorOnPrimary</item>
+        <item name="textFillColor">?attr/colorOnPrimary</item>
+        <item name="tabIconTint">?attr/colorOnPrimary</item>
+    </style>
+    <style name="ViewPager2" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+
+    </style>
+    <style name="HomeListItem" parent="@style/Widget.MaterialComponents.Button">
+        <item name="android:scaleType">fitEnd</item>
+        <item name="android:padding">15dp</item>
+        <item name="iconSize">24dp</item>
+        <item name="iconGravity">end</item>
+        <item name="backgroundTint">?attr/colorSecondary</item>
+    </style>
+
+</resources>

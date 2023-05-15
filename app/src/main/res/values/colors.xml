@@ -1,10 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="purple_200">#FFBB86FC</color>
-    <color name="purple_500">#FF6200EE</color>
-    <color name="purple_700">#FF3700B3</color>
-    <color name="teal_200">#FF03DAC5</color>
-    <color name="teal_700">#FF018786</color>
-    <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
+    <color name="ic_launcher_background">@color/off_white</color>
+
+    <color name="off_white">#f7fde8</color>
+    <color name="yellow_lighter">#FFFDBB</color>
+    <color name="yellow_darker">#fffb6f</color>
+    <color name="green_lighter">#bfe865</color>
+    <color name="green_darker">#74be1d</color>
+    <color name="off_black_on_primary">#2a2a2a</color>
+    <color name="off_black_on_secondary">#2b3023</color>
+
+    <color name="black">#000000</color>
+    <color name="white">#FFFFFF</color>
+
+    <color name="supportActionBarColor">?attr/colorPrimary</color>
 </resources>

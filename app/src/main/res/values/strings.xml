@@ -1,3 +1,7 @@
 <resources>
-    <string name="app_name">Water-your-plants-app</string>
+    <string name="app_name">WYDP</string>
+
+    <string name="hello_blank_fragment_calendar">calendar</string>
+    <string name="hello_blank_fragment_today">today</string>
+    <string name="hello_blank_fragment_plants">plants</string>
 </resources>
