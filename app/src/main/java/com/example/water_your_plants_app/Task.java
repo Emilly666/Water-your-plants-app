@@ -4,12 +4,13 @@ import java.util.Date;
 
 public class Task {
     private boolean expanded = false;
-    private final int type; //0 = WATER //1 = FERTILIZE
 
     private int task_id;
-    private Date date;
-    private String plantNickname;
-    private String fertilizerType;
+    private final int type; //0 = WATER //1 = FERTILIZE
+    private Date date;              // task's date
+    private String plantNickname;   // plants nickname
+    private int plantUser_id;       // user plant's id
+    private String fertilizerType;  // short description, null if type == watering
 
 
     public Task(int type){
