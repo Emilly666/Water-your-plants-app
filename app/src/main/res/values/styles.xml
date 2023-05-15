@@ -13,8 +13,8 @@
         <item name="android:scaleType">fitEnd</item>
         <item name="android:padding">15dp</item>
         <item name="iconSize">24dp</item>
-        <item name="icon">@drawable/info_24</item>
         <item name="iconGravity">end</item>
+        <item name="background">?attr/colorPrimary</item>
     </style>
 
 </resources>

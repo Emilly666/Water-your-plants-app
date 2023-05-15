@@ -16,5 +16,4 @@
         <item name="android:textColorPrimary">?attr/colorOnPrimary</item>
         <item name="colorControlNormal">?attr/colorOnPrimary</item>
     </style>
-
 </resources>
