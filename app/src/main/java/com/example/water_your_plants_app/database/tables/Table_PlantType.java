@@ -13,9 +13,9 @@ public class Table_PlantType {
     public String soil;
     public String fertilizerType;
 
-    public Table_PlantType(){
-        this.typeName = "type1";
-        this.soil = "nice soil";
-        this.fertilizerType = "f type1";
+    public Table_PlantType(String typeName, String soil, String fertilizerType){
+        this.typeName = typeName;
+        this.soil = soil;
+        this.fertilizerType = fertilizerType;
     }
 }

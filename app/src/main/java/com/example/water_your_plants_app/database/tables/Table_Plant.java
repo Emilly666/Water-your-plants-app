@@ -15,11 +15,18 @@ public class Table_Plant {
     public int temperatureFrom;
     public int temperatureTo;
     public String light;
-    public String humidity;
-    public String wateringFrequency;
-    public String fertilizerFrequency;
+    public int humidity;
+    public int wateringFrequency;
+    public int fertilizerFrequency;
 
-    public Table_Plant(){
-
+    public Table_Plant(long plantType_id, String plantName, int temperatureFrom, int temperatureTo, String light, int humidity, int wateringFrequency, int fertilizerFrequency){
+        this.plantType_id = plantType_id;
+        this.plantName = plantName;
+        this.temperatureFrom = temperatureFrom;
+        this.temperatureTo = temperatureTo;
+        this.light = light;
+        this.humidity = humidity;
+        this.wateringFrequency = wateringFrequency;
+        this.fertilizerFrequency = fertilizerFrequency;
     }
 }

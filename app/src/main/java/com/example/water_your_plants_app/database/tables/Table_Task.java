@@ -7,5 +7,5 @@ import androidx.room.PrimaryKey;
 public class Table_Task {
 
     @PrimaryKey(autoGenerate = true)
-    public int task_id;
+    public long task_id;
 }

@@ -7,12 +7,13 @@ import androidx.room.PrimaryKey;
 public class Table_UserPlant {
 
     @PrimaryKey(autoGenerate = true)
-    public int userPlant_id;
+    public long userPlant_id;
 
-    public int plant_id;
+    public long plant_id;
     public String plantNickname;
 
-    public Table_UserPlant(){
-
+    public Table_UserPlant(long plant_id, String plantNickname){
+        this.plant_id = plant_id;
+        this.plantNickname = plantNickname;
     }
 }

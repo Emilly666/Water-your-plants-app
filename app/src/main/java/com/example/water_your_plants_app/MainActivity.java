@@ -69,9 +69,8 @@ public class MainActivity extends AppCompatActivity {
             viewPager2.setCurrentItem(1,false);
         }
         //context.deleteDatabase("PLANTS_DATABASE.db");
-
         AppDatabase db = AppDatabase.getDatabase(context);
-        db.dao_userPlant().getAllUserPlants();
+
 
     }
     @Override
