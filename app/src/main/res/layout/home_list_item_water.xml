@@ -16,7 +16,7 @@
         android:layout_marginEnd="10dp"
         android:layout_marginBottom="10dp"
         android:backgroundTint="?attr/colorSecondary"
-        android:text="today's task, water plant"
+        android:text="today's task, water tablePlant"
         app:layout_constraintBottom_toTopOf="@+id/linear"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

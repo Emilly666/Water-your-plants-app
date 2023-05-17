@@ -1,4 +1,4 @@
-package com.example.water_your_plants_app;
+package com.example.water_your_plants_app.tasks;
 
 import android.app.Activity;
 import android.content.Context;
@@ -10,6 +10,10 @@ import android.widget.LinearLayout;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.water_your_plants_app.R;
+import com.example.water_your_plants_app.tasks.Task;
+
 import java.util.List;
 
 public class HomeViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {

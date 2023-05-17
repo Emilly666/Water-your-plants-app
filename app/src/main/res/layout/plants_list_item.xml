@@ -15,7 +15,7 @@
         android:layout_marginTop="10dp"
         android:layout_marginEnd="10dp"
         android:layout_marginBottom="10dp"
-        android:text="Nice plant"
+        android:text="Nice tablePlant"
         app:layout_constraintBottom_toTopOf="@+id/linear"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -39,7 +39,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginTop="10dp"
-            android:text="Some plant description" />
+            android:text="Some tablePlant description" />
 
         <TextView
             android:id="@+id/textView3"
@@ -48,6 +48,6 @@
             android:layout_marginStart="16dp"
             android:layout_marginTop="10dp"
             android:layout_marginBottom="10dp"
-            android:text="Some more plant description" />
+            android:text="Some more tablePlant description" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,17 +1,19 @@
-package com.example.water_your_plants_app;
+package com.example.water_your_plants_app.tasks;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.app.ActionBar;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.water_your_plants_app.R;
 import com.example.water_your_plants_app.databinding.FragmentHomeBinding;
+import com.example.water_your_plants_app.tasks.HomeViewAdapter;
+import com.example.water_your_plants_app.tasks.Task;
 
 import java.util.ArrayList;
 

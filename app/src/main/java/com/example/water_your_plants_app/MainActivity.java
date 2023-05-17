@@ -5,12 +5,16 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.viewpager2.widget.ViewPager2;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.widget.Toast;
 
+import com.example.water_your_plants_app.database.AppDatabase;
+import com.example.water_your_plants_app.database.tables.Table_Plant;
+import com.example.water_your_plants_app.database.tables.Table_PlantType;
 import com.google.android.material.tabs.TabLayout;
 
 import java.util.Objects;
@@ -21,11 +25,13 @@ public class MainActivity extends AppCompatActivity {
     ViewPager2 viewPager2;
     ViewPagerAdapter adapter;
     Toolbar toolbar;
+    Context context;
 
     private int selectedTabIndex;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        context = getApplicationContext();
         setContentView(R.layout.activity_main);
 
         tabLayout = findViewById(R.id.tab);
@@ -62,6 +68,11 @@ public class MainActivity extends AppCompatActivity {
             Objects.requireNonNull(tabLayout.getTabAt(1));
             viewPager2.setCurrentItem(1,false);
         }
+        //context.deleteDatabase("PLANTS_DATABASE.db");
+
+        AppDatabase db = AppDatabase.getDatabase(context);
+        db.dao_userPlant().getAllUserPlants();
+
     }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

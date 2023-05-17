@@ -1,9 +1,9 @@
-package com.example.water_your_plants_app;
+package com.example.water_your_plants_app.tasks;
 
 import java.util.Date;
 
 public class Task {
-    private boolean expanded = false;
+    private boolean expanded;
 
     private int task_id;
     private final int type; //0 = WATER //1 = FERTILIZE
@@ -14,8 +14,8 @@ public class Task {
 
 
     public Task(int type){
-        this.type = type;
         this.expanded = false;
+        this.type = type;
     }
     public int getType(){
         return type;

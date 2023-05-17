@@ -1,4 +1,4 @@
-package com.example.water_your_plants_app;
+package com.example.water_your_plants_app.plants;
 
 import android.app.Activity;
 import android.content.Context;
@@ -10,6 +10,9 @@ import android.widget.LinearLayout;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.water_your_plants_app.R;
+import com.example.water_your_plants_app.plants.Plant;
 
 import java.util.List;
 
@@ -54,6 +57,8 @@ public class PlantsViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
     }
 
     private void populateItemRows(ItemViewHolder viewHolder, int position) {
+
+        viewHolder.button4.setText(mItemList.get(position).name);
 
         viewHolder.linear.setVisibility(View.GONE);
         viewHolder.button4.setCompoundDrawablesWithIntrinsicBounds(0, 0, R.drawable.baseline_arrow_drop_down_24, 0);

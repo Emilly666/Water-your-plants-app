@@ -1,11 +1,11 @@
-package com.example.water_your_plants_app;
+package com.example.water_your_plants_app.plants;
 
 public class Plant {
     private boolean expanded = false;
 
     private int id;
 
-    private String name;            // plant species
+    public String name;            // plant species
     private String nickname;        // nickname given by user
     private String plantType;       // category name
     private int temperatureFrom;    // integer in Celsius
@@ -17,8 +17,8 @@ public class Plant {
     private String fertilizerType;  // short description of fertilizer
     private int fertilizerFrequency;// integer, number of bays between fertilizing
 
-    public Plant(){
-        this.expanded = false;
+    public Plant(String name){
+        this.name = name;
     }
 
     public boolean isExpanded() {

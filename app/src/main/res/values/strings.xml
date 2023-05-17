@@ -3,5 +3,5 @@
 
     <string name="hello_blank_fragment_calendar">calendar</string>
     <string name="hello_blank_fragment_today">today</string>
-    <string name="hello_blank_fragment_plants">plants</string>
+    <string name="hello_blank_fragment_plants">tablePlants</string>
 </resources>
