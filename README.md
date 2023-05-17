@@ -4,10 +4,10 @@
     <img src="https://cdn.discordapp.com/attachments/1103761225973776413/1106299881343172729/ic_launcher_round.png" alt="Logo" width="100" height="100">
   </a>
 
-  <h3 align="center">WYDP - Water Your Damn Plants</h3>
+  <h3 align="center">WYP - Water Your Plants</h3>
 
   <p align="center">
-    Don't let your tablePlants die, again...
+    Don't let your plants die, again...
     <br/>
     <br/>
   </p>
@@ -17,16 +17,17 @@
 ![Stargazers](https://img.shields.io/github/stars/Emilly666/Water-your-tablePlants-app?style=social) 
 ![License](https://img.shields.io/github/license/Emilly666/Water-your-tablePlants-app) 
 
-Do you want to learn how to take properly take care of your tablePlants? It is the app for you.
+Do you want to learn how to take properly take care of your plants? It is the app for you.
 
 ## Built With
 
 * [JAVA]()
 * [Android]()
+* [SQLite]()
 
 ## Usage
 
-Get notifications to remind you about taking care of your tablePlants.
+Get notifications to remind you about taking care of your plants.
 
 ## Roadmap
 
