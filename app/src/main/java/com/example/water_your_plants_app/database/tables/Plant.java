@@ -2,10 +2,10 @@ package com.example.water_your_plants_app.database.tables;
 
 import androidx.room.Entity;
 import androidx.room.ForeignKey;
-import androidx.room.Ignore;
 import androidx.room.PrimaryKey;
 
-@Entity(tableName = "plants")
+@Entity(tableName = "plants",
+        foreignKeys = @ForeignKey(entity = PlantType.class, parentColumns = "type_id", childColumns = "plantType_id", onDelete = ForeignKey.CASCADE))
 public class Plant {
 
     @PrimaryKey(autoGenerate = true)

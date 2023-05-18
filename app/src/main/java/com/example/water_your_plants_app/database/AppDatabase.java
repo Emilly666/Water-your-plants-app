@@ -15,7 +15,7 @@ import com.example.water_your_plants_app.database.tables.PlantType;
 import com.example.water_your_plants_app.database.tables.Task;
 import com.example.water_your_plants_app.database.tables.UserPlant;
 
-@Database(entities = {PlantType.class, Plant.class, UserPlant.class, Task.class}, version = 1)
+@Database(entities = {PlantType.class, Plant.class, UserPlant.class, Task.class}, version = 1, exportSchema = false)
 public abstract class AppDatabase extends RoomDatabase {
 
     private static volatile AppDatabase INSTANCE;

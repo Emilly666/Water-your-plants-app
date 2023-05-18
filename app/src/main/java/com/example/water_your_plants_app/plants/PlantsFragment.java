@@ -5,7 +5,6 @@ import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.LiveData;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -15,10 +14,7 @@ import android.view.ViewGroup;
 
 import com.example.water_your_plants_app.R;
 import com.example.water_your_plants_app.database.AppDatabase;
-import com.example.water_your_plants_app.database.relations.PlantsWithTypes;
-import com.example.water_your_plants_app.database.tables.Plant;
-import com.example.water_your_plants_app.database.tables.PlantType;
-import com.example.water_your_plants_app.database.tables.UserPlant;
+import com.example.water_your_plants_app.database.relations.UserPlantsWithTypes;
 import com.example.water_your_plants_app.databinding.FragmentHomeBinding;
 
 import java.util.ArrayList;
@@ -28,7 +24,7 @@ public class PlantsFragment extends Fragment {
 
     PlantsViewAdapter plantsViewAdapter;
     public RecyclerView recyclerView;
-    public List<PlantObj> plantsArrayList = new ArrayList<>();
+    public List<PlantListItem> plantsArrayList = new ArrayList<>();
     public FragmentHomeBinding binding;
     Context context;
     AppDatabase db;
@@ -39,7 +35,7 @@ public class PlantsFragment extends Fragment {
 
         binding = FragmentHomeBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
-        recyclerView = (RecyclerView) root.findViewById(R.id.recyclerView);
+        recyclerView = root.findViewById(R.id.recyclerView);
 
         getAllPlants();
         initAdapter();
@@ -53,11 +49,9 @@ public class PlantsFragment extends Fragment {
         plantsViewAdapter.notifyItemChanged(0,plantsArrayList.size());
     }
     void getAllPlants(){
-        List<PlantsWithTypes> listDb = db.dao_plant().getAllPlantWithPlantType();
+        List<UserPlantsWithTypes> listDb = db.dao_userPlant().getAllUserPlantsWithTypes();
         for(int i = 0; i < listDb.size(); i ++){
-            plantsArrayList.add(new PlantObj(
-                    listDb.get(i).plant.plantName,
-                    listDb.get(i).plantType.typeName
+            plantsArrayList.add(new PlantListItem(listDb.get(i)
             ));
         }
     }

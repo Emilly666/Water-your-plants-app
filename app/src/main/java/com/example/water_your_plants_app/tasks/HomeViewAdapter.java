@@ -2,7 +2,6 @@ package com.example.water_your_plants_app.tasks;
 
 import android.app.Activity;
 import android.content.Context;
-import android.graphics.drawable.Drawable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,7 +9,6 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.content.res.AppCompatResources;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.water_your_plants_app.R;
@@ -60,7 +58,7 @@ public class HomeViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
         LinearLayout linear;
         public ItemViewHolder(@NonNull View itemView) {
             super(itemView);
-            button4 = itemView.findViewById(R.id.button4);
+            button4 = itemView.findViewById(R.id.buttonHomeListItem);
             linear = itemView.findViewById(R.id.linear);
 
         }
@@ -78,18 +76,15 @@ public class HomeViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
         }
 
         viewHolder.button4.setCompoundDrawablesWithIntrinsicBounds(icon, 0, R.drawable.baseline_arrow_drop_down_24, 0);
-        viewHolder.button4.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if(mItemList.get(position).isExpanded()){
-                    viewHolder.linear.setVisibility(View.GONE);
-                    viewHolder.button4.setCompoundDrawablesWithIntrinsicBounds(icon, 0, R.drawable.baseline_arrow_drop_down_24, 0);
-                    mItemList.get(position).setExpanded(false);
-                }else{
-                    viewHolder.linear.setVisibility(View.VISIBLE);
-                    viewHolder.button4.setCompoundDrawablesWithIntrinsicBounds(icon, 0, R.drawable.baseline_arrow_drop_up_24, 0);
-                    mItemList.get(position).setExpanded(true);
-                }
+        viewHolder.button4.setOnClickListener(view -> {
+            if(mItemList.get(position).isExpanded()){
+                viewHolder.linear.setVisibility(View.GONE);
+                viewHolder.button4.setCompoundDrawablesWithIntrinsicBounds(icon, 0, R.drawable.baseline_arrow_drop_down_24, 0);
+                mItemList.get(position).setExpanded(false);
+            }else{
+                viewHolder.linear.setVisibility(View.VISIBLE);
+                viewHolder.button4.setCompoundDrawablesWithIntrinsicBounds(icon, 0, R.drawable.baseline_arrow_drop_up_24, 0);
+                mItemList.get(position).setExpanded(true);
             }
         });
     }

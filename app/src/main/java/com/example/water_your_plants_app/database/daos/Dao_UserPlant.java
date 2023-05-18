@@ -4,7 +4,6 @@ import androidx.room.Dao;
 import androidx.room.Delete;
 import androidx.room.Insert;
 import androidx.room.Query;
-import androidx.room.Transaction;
 
 import com.example.water_your_plants_app.database.relations.UserPlantsWithTypes;
 import com.example.water_your_plants_app.database.tables.UserPlant;
@@ -15,19 +14,24 @@ import java.util.List;
 public interface Dao_UserPlant {
 
     @Insert
-    void insert(UserPlant userPlant);
+    void insertUserPlant(UserPlant userPlant);
     @Delete
-    void delete(UserPlant userPlant);
+    void deleteUserPlant(UserPlant userPlant);
 
     @Query("SELECT * FROM userPlants")
     List<UserPlant> getAllUserPlants();
     @Query("SELECT * FROM userPlants WHERE userPlant_id = :id")
     UserPlant getUserPlant(int id);
 
-    @Transaction
-    @Query("SELECT * FROM plants")
-    List<UserPlantsWithTypes> getAllUserPlantWithPlantType();
-    @Transaction
-    @Query("SELECT * FROM plants WHERE plant_id = :plant_id")
-    UserPlantsWithTypes getUserPlantWithPlantType(long plant_id);
+    @Query("SELECT up.*, p.*, pt.* " +
+            "FROM userPlants up " +
+            "INNER JOIN plants p ON up.myPlant_id = p.plant_id " +
+            "INNER JOIN plantTypes pt ON p.plantType_id = pt.type_id " +
+            "WHERE up.userPlant_id = :userPlantId")
+    UserPlantsWithTypes getUserPlantWithTypesById(int userPlantId);
+    @Query("SELECT up.*, p.*, pt.* " +
+            "FROM userPlants up " +
+            "INNER JOIN plants p ON up.myPlant_id = p.plant_id " +
+            "INNER JOIN plantTypes pt ON p.plantType_id = pt.type_id ")
+    List<UserPlantsWithTypes> getAllUserPlantsWithTypes();
 }

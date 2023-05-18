@@ -7,21 +7,23 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.water_your_plants_app.R;
+import com.example.water_your_plants_app.database.relations.UserPlantsWithTypes;
 
 import java.util.List;
 
 public class PlantsViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
-    private List<PlantObj> mItemList;
+    private List<PlantListItem> mItemList;
     private Context context;
     private final Activity myActivity;
 
-    public PlantsViewAdapter(List<PlantObj> itemList, Activity activity) {
+    public PlantsViewAdapter(List<PlantListItem> itemList, Activity activity) {
         mItemList = itemList;
         myActivity = activity;
     }
@@ -46,32 +48,37 @@ public class PlantsViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
     }
 
     public class ItemViewHolder extends RecyclerView.ViewHolder {
-        Button button4;
+        Button buttonPlantItem;
         LinearLayout linear;
+        TextView plantName;
         public ItemViewHolder(@NonNull View itemView) {
             super(itemView);
-            button4 = itemView.findViewById(R.id.button4);
+            buttonPlantItem = itemView.findViewById(R.id.buttonPlantItem);
             linear = itemView.findViewById(R.id.linear);
+            plantName = itemView.findViewById(R.id.plantName);
         }
     }
 
     private void populateItemRows(ItemViewHolder viewHolder, int position) {
+        UserPlantsWithTypes userPlantsWithTypes = mItemList.get(position).userPlantsWithTypes;
 
-        viewHolder.button4.setText(mItemList.get(position).name);
+        viewHolder.buttonPlantItem.setText(userPlantsWithTypes.userPlant.plantNickname);
 
         viewHolder.linear.setVisibility(View.GONE);
-        viewHolder.button4.setCompoundDrawablesWithIntrinsicBounds(0, 0, R.drawable.baseline_arrow_drop_down_24, 0);
+        viewHolder.buttonPlantItem.setCompoundDrawablesWithIntrinsicBounds(0, 0, R.drawable.baseline_arrow_drop_down_24, 0);
 
-        viewHolder.button4.setOnClickListener(new View.OnClickListener() {
+        viewHolder.plantName.setText( userPlantsWithTypes.plantType.typeName + " : " + userPlantsWithTypes.plant.plantName);
+
+        viewHolder.buttonPlantItem.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if(mItemList.get(position).isExpanded()){
                     viewHolder.linear.setVisibility(View.GONE);
-                    viewHolder.button4.setCompoundDrawablesWithIntrinsicBounds(0, 0, R.drawable.baseline_arrow_drop_down_24, 0);
+                    viewHolder.buttonPlantItem.setCompoundDrawablesWithIntrinsicBounds(0, 0, R.drawable.baseline_arrow_drop_down_24, 0);
                     mItemList.get(position).setExpanded(false);
                 }else{
                     viewHolder.linear.setVisibility(View.VISIBLE);
-                    viewHolder.button4.setCompoundDrawablesWithIntrinsicBounds(0, 0, R.drawable.baseline_arrow_drop_up_24, 0);
+                    viewHolder.buttonPlantItem.setCompoundDrawablesWithIntrinsicBounds(0, 0, R.drawable.baseline_arrow_drop_up_24, 0);
                     mItemList.get(position).setExpanded(true);
                 }
             }

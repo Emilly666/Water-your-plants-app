@@ -1,17 +1,13 @@
 package com.example.water_your_plants_app.database.tables;
 
-import androidx.room.Embedded;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
-import androidx.room.Relation;
-
-import java.util.List;
 
 @Entity(tableName = "plantTypes")
 public class PlantType {
 
     @PrimaryKey(autoGenerate = true)
-    public long plantType_id;
+    public long type_id;
 
     public String typeName;
     public String soil;
