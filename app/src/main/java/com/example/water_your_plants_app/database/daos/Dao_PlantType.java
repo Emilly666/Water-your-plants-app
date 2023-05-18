@@ -4,7 +4,7 @@ import androidx.room.Dao;
 import androidx.room.Insert;
 import androidx.room.Query;
 
-import com.example.water_your_plants_app.database.tables.Table_PlantType;
+import com.example.water_your_plants_app.database.tables.PlantType;
 
 import java.util.List;
 
@@ -12,8 +12,11 @@ import java.util.List;
 public interface Dao_PlantType {
 
     @Insert
-    void insert(Table_PlantType plantType);
+    void insert(PlantType plantType);
 
     @Query("SELECT * FROM plantTypes")
-    List<Table_PlantType> getAllPlantTypes();
+    List<PlantType> getAllPlantTypes();
+
+    @Query("SELECT * FROM plantTypes WHERE plantType_id = :plantType_id")
+    PlantType getPlantTypeById(long plantType_id);
 }

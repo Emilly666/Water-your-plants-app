@@ -5,6 +5,7 @@ import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.LiveData;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -14,9 +15,10 @@ import android.view.ViewGroup;
 
 import com.example.water_your_plants_app.R;
 import com.example.water_your_plants_app.database.AppDatabase;
-import com.example.water_your_plants_app.database.tables.Table_Plant;
-import com.example.water_your_plants_app.database.tables.Table_PlantType;
-import com.example.water_your_plants_app.database.tables.Table_UserPlant;
+import com.example.water_your_plants_app.database.relations.PlantsWithTypes;
+import com.example.water_your_plants_app.database.tables.Plant;
+import com.example.water_your_plants_app.database.tables.PlantType;
+import com.example.water_your_plants_app.database.tables.UserPlant;
 import com.example.water_your_plants_app.databinding.FragmentHomeBinding;
 
 import java.util.ArrayList;
@@ -26,7 +28,7 @@ public class PlantsFragment extends Fragment {
 
     PlantsViewAdapter plantsViewAdapter;
     public RecyclerView recyclerView;
-    public ArrayList<Plant> plantsArrayList;
+    public List<PlantObj> plantsArrayList = new ArrayList<>();
     public FragmentHomeBinding binding;
     Context context;
     AppDatabase db;
@@ -39,8 +41,7 @@ public class PlantsFragment extends Fragment {
         View root = binding.getRoot();
         recyclerView = (RecyclerView) root.findViewById(R.id.recyclerView);
 
-        plantsArrayList = getAllPlants();
-
+        getAllPlants();
         initAdapter();
 
         return root;
@@ -49,15 +50,15 @@ public class PlantsFragment extends Fragment {
         plantsViewAdapter = new PlantsViewAdapter(plantsArrayList, getActivity());
         recyclerView.setAdapter(plantsViewAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+        plantsViewAdapter.notifyItemChanged(0,plantsArrayList.size());
     }
-    ArrayList<Plant> getAllPlants(){
-        List<Table_UserPlant> listDb = db.dao_userPlant().getAllUserPlants();
-
-        ArrayList<Plant> list = new ArrayList<>();
-        for(int i = 0; i < listDb.size(); i++){
-            Plant plant = new Plant(listDb.get(i).plantNickname);
-            list.add(plant);
+    void getAllPlants(){
+        List<PlantsWithTypes> listDb = db.dao_plant().getAllPlantWithPlantType();
+        for(int i = 0; i < listDb.size(); i ++){
+            plantsArrayList.add(new PlantObj(
+                    listDb.get(i).plant.plantName,
+                    listDb.get(i).plantType.typeName
+            ));
         }
-        return list;
     }
 }

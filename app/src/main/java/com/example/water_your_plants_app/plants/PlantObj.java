@@ -1,6 +1,6 @@
 package com.example.water_your_plants_app.plants;
 
-public class Plant {
+public class PlantObj {
     private boolean expanded = false;
 
     private int id;
@@ -17,8 +17,9 @@ public class Plant {
     private String fertilizerType;  // short description of fertilizer
     private int fertilizerFrequency;// integer, number of bays between fertilizing
 
-    public Plant(String name){
+    public PlantObj(String name, String plantType){
         this.name = name;
+        this.plantType = plantType;
     }
 
     public boolean isExpanded() {

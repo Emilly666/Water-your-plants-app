@@ -12,17 +12,16 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.water_your_plants_app.R;
-import com.example.water_your_plants_app.plants.Plant;
 
 import java.util.List;
 
 public class PlantsViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
-    private List<Plant> mItemList;
+    private List<PlantObj> mItemList;
     private Context context;
     private final Activity myActivity;
 
-    public PlantsViewAdapter(List<Plant> itemList, Activity activity) {
+    public PlantsViewAdapter(List<PlantObj> itemList, Activity activity) {
         mItemList = itemList;
         myActivity = activity;
     }

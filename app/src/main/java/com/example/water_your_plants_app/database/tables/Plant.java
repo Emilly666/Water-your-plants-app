@@ -1,10 +1,12 @@
 package com.example.water_your_plants_app.database.tables;
 
 import androidx.room.Entity;
+import androidx.room.ForeignKey;
+import androidx.room.Ignore;
 import androidx.room.PrimaryKey;
 
 @Entity(tableName = "plants")
-public class Table_Plant {
+public class Plant {
 
     @PrimaryKey(autoGenerate = true)
     public long plant_id;
@@ -19,7 +21,7 @@ public class Table_Plant {
     public int wateringFrequency;
     public int fertilizerFrequency;
 
-    public Table_Plant(long plantType_id, String plantName, int temperatureFrom, int temperatureTo, String light, int humidity, int wateringFrequency, int fertilizerFrequency){
+    public Plant(long plantType_id, String plantName, int temperatureFrom, int temperatureTo, String light, int humidity, int wateringFrequency, int fertilizerFrequency){
         this.plantType_id = plantType_id;
         this.plantName = plantName;
         this.temperatureFrom = temperatureFrom;

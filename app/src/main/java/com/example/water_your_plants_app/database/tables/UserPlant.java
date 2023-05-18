@@ -4,7 +4,7 @@ import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
 @Entity(tableName = "userPlants")
-public class Table_UserPlant {
+public class UserPlant {
 
     @PrimaryKey(autoGenerate = true)
     public long userPlant_id;
@@ -12,7 +12,7 @@ public class Table_UserPlant {
     public long plant_id;
     public String plantNickname;
 
-    public Table_UserPlant(long plant_id, String plantNickname){
+    public UserPlant(long plant_id, String plantNickname){
         this.plant_id = plant_id;
         this.plantNickname = plantNickname;
     }

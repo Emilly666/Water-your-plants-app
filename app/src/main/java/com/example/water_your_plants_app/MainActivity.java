@@ -3,6 +3,7 @@ package com.example.water_your_plants_app;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.lifecycle.LiveData;
 import androidx.viewpager2.widget.ViewPager2;
 
 import android.content.Context;
@@ -13,8 +14,9 @@ import android.view.MenuItem;
 import android.widget.Toast;
 
 import com.example.water_your_plants_app.database.AppDatabase;
-import com.example.water_your_plants_app.database.tables.Table_Plant;
-import com.example.water_your_plants_app.database.tables.Table_PlantType;
+import com.example.water_your_plants_app.database.relations.PlantsWithTypes;
+import com.example.water_your_plants_app.database.tables.Plant;
+import com.example.water_your_plants_app.database.tables.PlantType;
 import com.google.android.material.tabs.TabLayout;
 
 import java.util.Objects;
@@ -71,7 +73,8 @@ public class MainActivity extends AppCompatActivity {
         //context.deleteDatabase("PLANTS_DATABASE.db");
         AppDatabase db = AppDatabase.getDatabase(context);
 
-
+        //db.dao_plantType().insert(new PlantType("type1", "some soil", "some fertilizer"));
+        //db.dao_plant().insertPlant(new Plant(1, "nice plant 1", 20, 30, "nice light", 30, 4, 20));
     }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

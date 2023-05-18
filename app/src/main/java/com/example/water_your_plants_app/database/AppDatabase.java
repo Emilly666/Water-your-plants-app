@@ -10,12 +10,12 @@ import com.example.water_your_plants_app.database.daos.Dao_Plant;
 import com.example.water_your_plants_app.database.daos.Dao_PlantType;
 import com.example.water_your_plants_app.database.daos.Dao_Task;
 import com.example.water_your_plants_app.database.daos.Dao_UserPlant;
-import com.example.water_your_plants_app.database.tables.Table_Plant;
-import com.example.water_your_plants_app.database.tables.Table_PlantType;
-import com.example.water_your_plants_app.database.tables.Table_Task;
-import com.example.water_your_plants_app.database.tables.Table_UserPlant;
+import com.example.water_your_plants_app.database.tables.Plant;
+import com.example.water_your_plants_app.database.tables.PlantType;
+import com.example.water_your_plants_app.database.tables.Task;
+import com.example.water_your_plants_app.database.tables.UserPlant;
 
-@Database(entities = {Table_PlantType.class, Table_Plant.class, Table_UserPlant.class, Table_Task.class}, version = 1)
+@Database(entities = {PlantType.class, Plant.class, UserPlant.class, Task.class}, version = 1)
 public abstract class AppDatabase extends RoomDatabase {
 
     private static volatile AppDatabase INSTANCE;
