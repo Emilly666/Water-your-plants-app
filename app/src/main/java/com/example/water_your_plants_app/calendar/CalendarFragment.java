@@ -1,4 +1,4 @@
-package com.example.water_your_plants_app;
+package com.example.water_your_plants_app.calendar;
 
 import android.os.Bundle;
 
@@ -7,6 +7,8 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import com.example.water_your_plants_app.R;
 
 public class CalendarFragment extends Fragment {
 
