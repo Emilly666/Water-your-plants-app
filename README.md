@@ -13,9 +13,8 @@
   </p>
 </p>
 
-![Contributors](https://img.shields.io/github/contributors/Emilly666/Water-your-tablePlants-app?color=dark-green) 
-![Stargazers](https://img.shields.io/github/stars/Emilly666/Water-your-tablePlants-app?style=social) 
-![License](https://img.shields.io/github/license/Emilly666/Water-your-tablePlants-app) 
+<img src="https://badgen.net/github/contributors/Emilly666/Water-your-plants-app"> <img src="https://badgen.net/github/license/Emilly666/Water-your-plants-app"> <img src="https://badgen.net/github/stars/Emilly666/Water-your-plants-app">
+
 
 Do you want to learn how to take properly take care of your plants? It is the app for you.
 
@@ -38,8 +37,8 @@ Get notifications to remind you about taking care of your plants.
 - [x] Database
 - [ ] Plants list
 - [ ] Home tasks list
-- [ ] Adding tablePlants
-- [ ] Adding custom tablePlants
+- [ ] Adding plants
+- [ ] Adding custom plants
 - [ ] Generating tasks lists and filling calendar
 - [ ] Push notifications
 
