@@ -69,13 +69,16 @@ public class MainActivity extends AppCompatActivity {
         //context.deleteDatabase("PLANTS_DATABASE.db");
         AppDatabase db = AppDatabase.getDatabase(context);
 
-        //db.dao_plantType().insertPlantType(new PlantType("type1", "some soil", "some fertilizer"));
-        //db.dao_plant().insertPlant(new Plant(1, "nice plant 1", 20, 30, "nice light", 30, 4, 20));
-        //db.dao_userPlant().insertUserPlant(new UserPlant(1, "my nice plant 1"));
+        /* //sample data
+        db.dao_plantType().insertPlantType(new PlantType("type1", "some soil", "some fertilizer"));
+        db.dao_plant().insertPlant(new Plant(1, "nice plant 1", 20, 30, "nice light", 30, 4, 20));
+        db.dao_userPlant().insertUserPlant(new UserPlant(1, "my nice plant 1"));
+        db.dao_plantType().insertPlantType(new PlantType("type2", "some soil", "some fertilizer"));
+        db.dao_plant().insertPlant(new Plant(2, "nice plant 2", 20, 30, "nice light", 30, 4, 20));
+        db.dao_userPlant().insertUserPlant(new UserPlant(2, "my nice plant 2"));
+        */
+        //db.dao_plantType().deletePlantType(db.dao_plantType().getPlantTypeById(1));
 
-        //db.dao_plantType().insertPlantType(new PlantType("type2", "some soil", "some fertilizer"));
-        //db.dao_plant().insertPlant(new Plant(2, "nice plant 2", 20, 30, "nice light", 30, 4, 20));
-        //db.dao_userPlant().insertUserPlant(new UserPlant(2, "my nice plant 2"));
     }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
