@@ -13,7 +13,7 @@
         <item name="android:statusBarColor">@color/off_black_on_primary</item>
         <!-- Customize your theme here. -->
         <item name="android:colorBackground">@color/off_black_on_primary</item>
-        <item name="android:textColorPrimary">@color/off_black_on_secondary</item>
+        <item name="android:textColorPrimary">@color/off_white</item>
         <item name="colorControlNormal">@color/off_black_on_secondary</item>
     </style>
 </resources>

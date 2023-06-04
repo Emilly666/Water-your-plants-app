@@ -140,6 +140,18 @@ public class PlantsViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
                     }
                 });
 
+                buttonSubmit.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+
+                        //add userPlant here
+
+
+
+                        dialog.dismiss();
+                    }
+                });
+
 
                 dialog.show();
             }

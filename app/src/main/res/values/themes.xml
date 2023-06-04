@@ -15,5 +15,6 @@
         <item name="android:colorBackground">@color/off_white</item>
         <item name="android:textColorPrimary">?attr/colorOnPrimary</item>
         <item name="colorControlNormal">?attr/colorOnPrimary</item>
+        <item name="colorAccent">?attr/colorPrimaryVariant</item>
     </style>
 </resources>
