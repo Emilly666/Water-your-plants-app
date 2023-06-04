@@ -130,8 +130,15 @@ public class PlantsViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
                 EditText plantNicknameTextView = dialog.findViewById(R.id.plantNicknameTextView);
 
                 ArrayAdapter<String> adapter = new ArrayAdapter<String>(context,android.R.layout.select_dialog_item, arr);
-                autocomplete.setThreshold(2);
+                autocomplete.setThreshold(0);
                 autocomplete.setAdapter(adapter);
+
+                autocomplete.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+                    @Override
+                    public void onFocusChange(View view, boolean b) {
+                        autocomplete.showDropDown();
+                    }
+                });
 
                 closeButton.setOnClickListener(new View.OnClickListener() {
                     @Override
