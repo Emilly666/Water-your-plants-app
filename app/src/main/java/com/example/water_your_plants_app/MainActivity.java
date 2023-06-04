@@ -13,6 +13,9 @@ import android.view.MenuItem;
 import android.widget.Toast;
 
 import com.example.water_your_plants_app.database.AppDatabase;
+import com.example.water_your_plants_app.database.tables.Plant;
+import com.example.water_your_plants_app.database.tables.PlantType;
+import com.example.water_your_plants_app.database.tables.UserPlant;
 import com.google.android.material.tabs.TabLayout;
 
 import java.util.Objects;
