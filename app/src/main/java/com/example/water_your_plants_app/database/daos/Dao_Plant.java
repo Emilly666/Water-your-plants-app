@@ -19,4 +19,7 @@ public interface Dao_Plant {
 
     @Query("SELECT * FROM plants")
     List<Plant> getAllPlants();
+
+    @Query("SELECT PlantName FROM plants")
+    List<String> getAllPlantNames();
 }
