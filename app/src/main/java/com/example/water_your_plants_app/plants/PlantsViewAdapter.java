@@ -1,6 +1,7 @@
 package com.example.water_your_plants_app.plants;
 
 import android.app.Activity;
+import android.app.Dialog;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -19,6 +20,7 @@ import java.util.List;
 
 public class PlantsViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
+    private final int VIEW_TYPE_ITEM = 0;
     private List<PlantListItem> mItemList;
     private Context context;
     private final Activity myActivity;
@@ -32,13 +34,24 @@ public class PlantsViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         context = parent.getContext();
-        View view = LayoutInflater.from(context).inflate(R.layout.plants_list_item, parent, false);
-        return new ItemViewHolder(view);
+
+        if (viewType == VIEW_TYPE_ITEM) {
+            View view = LayoutInflater.from(context).inflate(R.layout.plants_list_item, parent, false);
+            return new ItemViewHolder(view);
+        }
+        else {
+            View view = LayoutInflater.from(context).inflate(R.layout.add_user_plant_button, parent, false);
+            return new AddButtonViewHolder(view);
+        }
     }
 
     @Override
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
-        populateItemRows((ItemViewHolder) holder, position);
+        if (holder instanceof ItemViewHolder) {
+            populateItemRows((ItemViewHolder) holder, position);
+        } else if (holder instanceof AddButtonViewHolder) {
+            addUserPlantItem((AddButtonViewHolder) holder, position);
+        }
     }
 
     // getItemCount() method returns the size of the list
@@ -46,7 +59,10 @@ public class PlantsViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
     public int getItemCount() {
         return mItemList == null ? 0 : mItemList.size();
     }
-
+    public int getItemViewType(int position) {
+        int VIEW_TYPE_ADD_BUTTON = 1;
+        return mItemList.get(position) == null ? VIEW_TYPE_ADD_BUTTON : VIEW_TYPE_ITEM;
+    }
     public class ItemViewHolder extends RecyclerView.ViewHolder {
         Button buttonPlantItem;
         LinearLayout linear;
@@ -58,7 +74,13 @@ public class PlantsViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
             plantName = itemView.findViewById(R.id.plantName);
         }
     }
-
+    public class AddButtonViewHolder extends RecyclerView.ViewHolder {
+        Button addUserPlantButton;
+        public AddButtonViewHolder(@NonNull View itemView) {
+            super(itemView);
+            addUserPlantButton = itemView.findViewById(R.id.addUserPlantButton);
+        }
+    }
     private void populateItemRows(ItemViewHolder viewHolder, int position) {
         UserPlantsWithTypes userPlantsWithTypes = mItemList.get(position).userPlantsWithTypes;
 
@@ -81,6 +103,16 @@ public class PlantsViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
                     viewHolder.buttonPlantItem.setCompoundDrawablesWithIntrinsicBounds(0, 0, R.drawable.baseline_arrow_drop_up_24, 0);
                     mItemList.get(position).setExpanded(true);
                 }
+            }
+        });
+    }
+    private void addUserPlantItem(AddButtonViewHolder viewHolder, int position) {
+        viewHolder.addUserPlantButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Dialog dialog = new Dialog(context);
+                dialog.setContentView(R.layout.add_user_plant_popup_layout);
+                dialog.show();
             }
         });
     }

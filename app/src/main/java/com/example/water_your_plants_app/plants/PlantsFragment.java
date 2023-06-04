@@ -54,5 +54,6 @@ public class PlantsFragment extends Fragment {
             plantsArrayList.add(new PlantListItem(listDb.get(i)
             ));
         }
+        plantsArrayList.add(null);
     }
 }
