@@ -15,11 +15,11 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.water_your_plants_app.AddUserPlantActivity;
@@ -76,13 +76,13 @@ public class PlantsViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
     }
     public class ItemViewHolder extends RecyclerView.ViewHolder {
         Button buttonPlantItem;
-        LinearLayout linear;
+        ConstraintLayout plantDescription;
         TextView plantName;
         public ItemViewHolder(@NonNull View itemView) {
             super(itemView);
             buttonPlantItem = itemView.findViewById(R.id.buttonPlantItem);
-            linear = itemView.findViewById(R.id.linear);
-            plantName = itemView.findViewById(R.id.plantName);
+            plantDescription = itemView.findViewById(R.id.plantDescription);
+            plantName = itemView.findViewById(R.id.spiecesName);
         }
     }
     public class AddButtonViewHolder extends RecyclerView.ViewHolder {
@@ -97,18 +97,18 @@ public class PlantsViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
 
         viewHolder.buttonPlantItem.setText(userPlant.userPlant.plantNickname);
 
-        viewHolder.linear.setVisibility(View.GONE);
+        viewHolder.plantDescription.setVisibility(View.GONE);
         viewHolder.buttonPlantItem.setCompoundDrawablesWithIntrinsicBounds(0, 0, R.drawable.baseline_arrow_drop_down_24, 0);
 
-        viewHolder.plantName.setText( userPlant.plantType.typeName + " : " + userPlant.plant.plantName);
+        viewHolder.plantName.setText(userPlant.plant.plantName);
 
         viewHolder.buttonPlantItem.setOnClickListener(view -> {
             if(mItemList.get(position).isExpanded()){
-                viewHolder.linear.setVisibility(View.GONE);
+                viewHolder.plantDescription.setVisibility(View.GONE);
                 viewHolder.buttonPlantItem.setCompoundDrawablesWithIntrinsicBounds(0, 0, R.drawable.baseline_arrow_drop_down_24, 0);
                 mItemList.get(position).setExpanded(false);
             }else{
-                viewHolder.linear.setVisibility(View.VISIBLE);
+                viewHolder.plantDescription.setVisibility(View.VISIBLE);
                 viewHolder.buttonPlantItem.setCompoundDrawablesWithIntrinsicBounds(0, 0, R.drawable.baseline_arrow_drop_up_24, 0);
                 mItemList.get(position).setExpanded(true);
             }

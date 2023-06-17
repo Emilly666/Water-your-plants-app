@@ -3,7 +3,6 @@
     <string name="settings">SETTINGS</string>
 
     <string name="add_plant">Add Plant</string>
-    <string name="plant_s_name">Plant\'s name</string>
     <string name="add_a_nickname">Add a nickname</string>
     <string name="close_button">close popup</string>
     <string name="save">SAVE</string>
@@ -13,4 +12,5 @@
     <string name="notifications_time">Notifications time</string>
     <string name="add_species">add species</string>
     <string name="species_name">Species name</string>
+    <string name="plants_nickname">plants nickname</string>
 </resources>

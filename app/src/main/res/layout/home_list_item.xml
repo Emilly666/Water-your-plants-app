@@ -17,13 +17,13 @@
         android:layout_marginBottom="10dp"
         android:backgroundTint="?attr/colorSecondary"
         android:text="Task"
-        app:layout_constraintBottom_toTopOf="@+id/linear"
+        app:layout_constraintBottom_toTopOf="@+id/plantDescription"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <LinearLayout
-        android:id="@+id/linear"
+        android:id="@+id/plantDescription"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"

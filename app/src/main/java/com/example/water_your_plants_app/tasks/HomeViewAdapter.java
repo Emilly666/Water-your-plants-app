@@ -59,7 +59,7 @@ public class HomeViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
         public ItemViewHolder(@NonNull View itemView) {
             super(itemView);
             button4 = itemView.findViewById(R.id.buttonHomeListItem);
-            linear = itemView.findViewById(R.id.linear);
+            linear = itemView.findViewById(R.id.plantDescription);
 
         }
     }
