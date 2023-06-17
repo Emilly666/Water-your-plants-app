@@ -3,6 +3,8 @@ package com.example.water_your_plants_app.plants;
 import android.app.Activity;
 import android.app.Dialog;
 import android.content.Context;
+import android.content.Intent;
+import android.os.Bundle;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,6 +13,7 @@ import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -19,6 +22,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.water_your_plants_app.AddUserPlantActivity;
 import com.example.water_your_plants_app.R;
 import com.example.water_your_plants_app.database.AppDatabase;
 import com.example.water_your_plants_app.database.relations.UserPlantsWithTypes;
@@ -98,18 +102,15 @@ public class PlantsViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
 
         viewHolder.plantName.setText( userPlant.plantType.typeName + " : " + userPlant.plant.plantName);
 
-        viewHolder.buttonPlantItem.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if(mItemList.get(position).isExpanded()){
-                    viewHolder.linear.setVisibility(View.GONE);
-                    viewHolder.buttonPlantItem.setCompoundDrawablesWithIntrinsicBounds(0, 0, R.drawable.baseline_arrow_drop_down_24, 0);
-                    mItemList.get(position).setExpanded(false);
-                }else{
-                    viewHolder.linear.setVisibility(View.VISIBLE);
-                    viewHolder.buttonPlantItem.setCompoundDrawablesWithIntrinsicBounds(0, 0, R.drawable.baseline_arrow_drop_up_24, 0);
-                    mItemList.get(position).setExpanded(true);
-                }
+        viewHolder.buttonPlantItem.setOnClickListener(view -> {
+            if(mItemList.get(position).isExpanded()){
+                viewHolder.linear.setVisibility(View.GONE);
+                viewHolder.buttonPlantItem.setCompoundDrawablesWithIntrinsicBounds(0, 0, R.drawable.baseline_arrow_drop_down_24, 0);
+                mItemList.get(position).setExpanded(false);
+            }else{
+                viewHolder.linear.setVisibility(View.VISIBLE);
+                viewHolder.buttonPlantItem.setCompoundDrawablesWithIntrinsicBounds(0, 0, R.drawable.baseline_arrow_drop_up_24, 0);
+                mItemList.get(position).setExpanded(true);
             }
         });
     }
@@ -120,60 +121,60 @@ public class PlantsViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
         String[] arr = listDb.toArray(new String[0]);
 
 
-        viewHolder.addUserPlantButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Dialog dialog = new Dialog(context);
-                dialog.setContentView(R.layout.add_user_plant_popup_layout);
+        viewHolder.addUserPlantButton.setOnClickListener(view -> {
+            Dialog dialog = new Dialog(context);
+            dialog.setContentView(R.layout.add_user_plant_popup_layout);
 
-                AutoCompleteTextView autocomplete = dialog.findViewById(R.id.autoCompleteTextView);
-                ImageView closeButton = dialog.findViewById(R.id.closeButton);
-                Button buttonSubmit = dialog.findViewById(R.id.buttonSubmit);
-                EditText plantNicknameTextView = dialog.findViewById(R.id.plantNicknameTextView);
+            AutoCompleteTextView autocomplete = dialog.findViewById(R.id.autoCompleteTextView);
+            ImageView closeButton = dialog.findViewById(R.id.closeButton);
+            Button buttonSubmit = dialog.findViewById(R.id.buttonSubmit);
+            EditText plantNicknameTextView = dialog.findViewById(R.id.plantNicknameTextView);
+            ImageButton addUserPlantButton = dialog.findViewById(R.id.addPlantButton);
 
-                ArrayAdapter<String> adapter = new ArrayAdapter<String>(context,android.R.layout.select_dialog_item, arr);
-                autocomplete.setThreshold(0);
-                autocomplete.setAdapter(adapter);
+            ArrayAdapter<String> adapter = new ArrayAdapter<>(context,android.R.layout.select_dialog_item, arr);
+            autocomplete.setThreshold(0);
+            autocomplete.setAdapter(adapter);
 
-                autocomplete.setOnFocusChangeListener(new View.OnFocusChangeListener() {
-                    @Override
-                    public void onFocusChange(View view, boolean b) {
-                        autocomplete.showDropDown();
+            autocomplete.setOnFocusChangeListener((view14, b) -> autocomplete.showDropDown());
+
+            closeButton.setOnClickListener(view1 -> dialog.dismiss());
+
+            buttonSubmit.setOnClickListener(view12 -> {
+                //add userPlant here
+                int newPantID = db.dao_plant().checkIfPlantExistByName(autocomplete.getText().toString());
+
+                if(newPantID==0){//plant does not exist in database
+                    Toast toast = Toast.makeText(context, "Plant species not found in database", Toast.LENGTH_LONG);
+                    toast.setGravity(Gravity.CENTER_VERTICAL|Gravity.CENTER_HORIZONTAL, 0, 0);
+                    toast.show();
+                }
+                else {
+                    String name;
+                    if(plantNicknameTextView.getText().toString().equals("")){
+                        name = autocomplete.getText().toString();
+                    }else{
+                        name = plantNicknameTextView.getText().toString();
                     }
-                });
 
-                closeButton.setOnClickListener(view1 -> dialog.dismiss());
+                    UserPlant userPlant = new UserPlant(newPantID, name);
+                    db.dao_userPlant().insertUserPlant(userPlant);
 
-                buttonSubmit.setOnClickListener(view12 -> {
-                    //add userPlant here
-                    int newPantID = db.dao_plant().checkIfPlantExistByName(autocomplete.getText().toString());
+                    mItemList.remove(mItemList.size()-1);
+                    UserPlantsWithTypes userPlantsWithTypes = db.dao_userPlant().getLatestUserPlantWithType();
+                    mItemList.add(new PlantListItem(userPlantsWithTypes));
+                    mItemList.add(null);
 
-                    if(newPantID==0){//plant does not exist in database
-                        Toast toast = Toast.makeText(context, "Plant species not found in database", Toast.LENGTH_LONG);
-                        toast.setGravity(Gravity.CENTER_VERTICAL|Gravity.CENTER_HORIZONTAL, 0, 0);
-                        toast.show();
-                    }
-                    else {
-                        String name;
-                        if(plantNicknameTextView.getText().toString().equals("")){
-                            name = autocomplete.getText().toString();
-                        }else{
-                            name = plantNicknameTextView.getText().toString();
-                        }
-
-                        UserPlant userPlant = new UserPlant(newPantID, name);
-                        db.dao_userPlant().insertUserPlant(userPlant);
-
-                        mItemList.remove(mItemList.size()-1);
-                        UserPlantsWithTypes userPlantsWithTypes = db.dao_userPlant().getLatestUserPlantWithType();
-                        mItemList.add(new PlantListItem(userPlantsWithTypes));
-                        mItemList.add(null);
-
-                        dialog.dismiss();
-                    }
-                });
-                dialog.show();
-            }
+                    dialog.dismiss();
+                }
+            });
+            addUserPlantButton.setOnClickListener(view13 -> {
+                Intent i = new Intent(myActivity, AddUserPlantActivity.class);
+                Bundle b = new Bundle();
+                b.putString("speciesName", autocomplete.getText().toString()    );
+                i.putExtras(b);
+                myActivity.startActivity(i);
+            });
+            dialog.show();
         });
     }
 }

@@ -16,7 +16,8 @@
         <item name="iconGravity">end</item>
         <item name="backgroundTint">?attr/colorSecondary</item>
     </style>
-    <style name="FAB" parent="">
-        <item name="cornerSize">0dp</item>
+
+    <style name="addButton" parent="@style/Widget.AppCompat.ImageButton">
+        <item name="backgroundTint">?attr/colorPrimary</item>
     </style>
 </resources>
