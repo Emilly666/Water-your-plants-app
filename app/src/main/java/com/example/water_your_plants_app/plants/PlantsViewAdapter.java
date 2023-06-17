@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.drawable.Icon;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -77,12 +78,21 @@ public class PlantsViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
     public class ItemViewHolder extends RecyclerView.ViewHolder {
         Button buttonPlantItem;
         ConstraintLayout plantDescription;
-        TextView plantName;
+        TextView plantName, typeName, temperature, light, humidity, soil, fertilizer, waterFrequency;
+        ImageView typeIcon;
         public ItemViewHolder(@NonNull View itemView) {
             super(itemView);
             buttonPlantItem = itemView.findViewById(R.id.buttonPlantItem);
             plantDescription = itemView.findViewById(R.id.plantDescription);
             plantName = itemView.findViewById(R.id.spiecesName);
+            typeName = itemView.findViewById(R.id.typeName);
+            temperature = itemView.findViewById(R.id.temperature);
+            light = itemView.findViewById(R.id.light);
+            humidity = itemView.findViewById(R.id.humidity);
+            soil = itemView.findViewById(R.id.soil);
+            fertilizer = itemView.findViewById(R.id.fertilizer);
+            waterFrequency = itemView.findViewById(R.id.waterFrequency);
+            typeIcon = itemView.findViewById(R.id.typeIcon);
         }
     }
     public class AddButtonViewHolder extends RecyclerView.ViewHolder {
@@ -95,12 +105,8 @@ public class PlantsViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
     private void populateItemRows(ItemViewHolder viewHolder, int position) {
         UserPlantsWithTypes userPlant = mItemList.get(position).userPlantsWithTypes;
 
-        viewHolder.buttonPlantItem.setText(userPlant.userPlant.plantNickname);
-
         viewHolder.plantDescription.setVisibility(View.GONE);
         viewHolder.buttonPlantItem.setCompoundDrawablesWithIntrinsicBounds(0, 0, R.drawable.baseline_arrow_drop_down_24, 0);
-
-        viewHolder.plantName.setText(userPlant.plant.plantName);
 
         viewHolder.buttonPlantItem.setOnClickListener(view -> {
             if(mItemList.get(position).isExpanded()){
@@ -113,6 +119,35 @@ public class PlantsViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
                 mItemList.get(position).setExpanded(true);
             }
         });
+
+        viewHolder.buttonPlantItem.setText(userPlant.userPlant.plantNickname);
+        viewHolder.plantName.setText(userPlant.plant.plantName);
+        viewHolder.typeName.setText(userPlant.plantType.typeName);
+        viewHolder.light.setText(userPlant.plant.light);
+        viewHolder.soil.setText(userPlant.plantType.soil);
+
+        String hum = userPlant.plant.humidity + " %";
+        viewHolder.humidity.setText(hum);
+        String temp = "from " + userPlant.plant.temperatureFrom + " °C to " + userPlant.plant.temperatureTo + " °C";
+        viewHolder.temperature.setText(temp);
+        String fertilizing = "Fertilize every " + userPlant.plant.fertilizerFrequency + " days, with " + userPlant.plantType.fertilizerType;
+        viewHolder.fertilizer.setText(fertilizing);
+        String waterFreq = "Water every " + userPlant.plant.wateringFrequency + " days";
+        viewHolder.waterFrequency.setText(waterFreq);
+
+        int icon;
+        switch ((int) userPlant.plantType.type_id){ // placeholders icons
+            case 1:
+                icon = R.drawable.baseline_settings_24;
+                break;
+            case 2:
+                icon = R.drawable.home_24;
+                break;
+            default:
+                icon = R.drawable.local_florist_24;
+        }
+        viewHolder.typeIcon.setBackgroundResource(icon);
+
     }
     private void addUserPlantItem(AddButtonViewHolder viewHolder, int position) {
         AppDatabase db = AppDatabase.getDatabase(context);
