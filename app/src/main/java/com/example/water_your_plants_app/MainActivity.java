@@ -6,11 +6,11 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.viewpager2.widget.ViewPager2;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
-import android.widget.Toast;
 
 import com.example.water_your_plants_app.database.AppDatabase;
 import com.google.android.material.tabs.TabLayout;
@@ -82,7 +82,7 @@ public class MainActivity extends AppCompatActivity {
         int itemId = item.getItemId();
 
         if (itemId == R.id.settings) {
-            Toast.makeText(getApplicationContext(),"open settings", Toast.LENGTH_SHORT).show();
+            startActivity(new Intent(MainActivity.this, SettingsActivity.class));
             return true;
         }
         return super.onOptionsItemSelected(item);
