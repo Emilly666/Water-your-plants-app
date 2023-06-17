@@ -1,5 +1,6 @@
 <resources>
     <string name="app_name">WYP</string>
+    <string name="settings">SETTINGS</string>
 
     <string name="add_plant">Add Plant</string>
     <string name="plant_s_name">Plant\'s name</string>
@@ -9,5 +10,5 @@
     <string name="water_notifications">Water notifications</string>
     <string name="fertilize_notifications">Fertilize notifications</string>
     <string name="notifications">NOTIFICATIONS</string>
-    <string name="notifications_time">Notification time</string>
+    <string name="notifications_time">Notifications time</string>
 </resources>
