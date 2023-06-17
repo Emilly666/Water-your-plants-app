@@ -31,13 +31,12 @@ public class SharedPreferencesManager {
         editor.apply();
     }
     public LocalTime getNotificationsTime() {
-        LocalTime time = LocalTime.ofSecondOfDay(sp.getLong("notificationsTime", LocalTime.of(10,0).getLong(ChronoField.SECOND_OF_DAY)));
-        return time;
+        return LocalTime.ofSecondOfDay(sp.getLong("notificationsTime", LocalTime.of(10,0).getLong(ChronoField.SECOND_OF_DAY)));
     }
 
     public void setNotificationsWater(boolean notificationsWater) {
         SharedPreferences.Editor editor = sp.edit();
-        editor.putBoolean("notificationsWater", true);
+        editor.putBoolean("notificationsWater", notificationsWater);
         editor.apply();
     }
     public boolean getNotificationsWater() {
@@ -46,7 +45,7 @@ public class SharedPreferencesManager {
 
     public void setNotificationsFertilize(boolean notificationsFertilize) {
         SharedPreferences.Editor editor = sp.edit();
-        editor.putBoolean("notificationsFertilize", true);
+        editor.putBoolean("notificationsFertilize", notificationsFertilize);
         editor.apply();
     }
     public boolean getNotificationsFertilize() {

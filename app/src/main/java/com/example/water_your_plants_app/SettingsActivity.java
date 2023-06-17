@@ -17,11 +17,13 @@ public class SettingsActivity extends AppCompatActivity {
     TimePicker notificationsTimePicker;
     SwitchCompat switchWater, switchFertilizer;
     Context context;
+    SharedPreferencesManager sp;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_settings);
         context = getApplicationContext();
+        sp = SharedPreferencesManager.getInstance(context);
 
         toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -34,14 +36,21 @@ public class SettingsActivity extends AppCompatActivity {
             notificationsTimePicker.setIs24HourView(true);
         }
 
-        LocalTime notificationsTime = SharedPreferencesManager.getInstance(context).getNotificationsTime();
+        LocalTime notificationsTime = sp.getNotificationsTime();
         notificationsTimePicker.setHour(notificationsTime.getHour());
         notificationsTimePicker.setMinute(notificationsTime.getMinute());
 
         switchWater = findViewById(R.id.switchWater);
         switchFertilizer = findViewById(R.id.switchFertilizer);
 
-        switchWater.setChecked(SharedPreferencesManager.getInstance(context).getNotificationsWater());
-        switchFertilizer.setChecked(SharedPreferencesManager.getInstance(context).getNotificationsFertilize());
+        switchWater.setChecked(sp.getNotificationsWater());
+        switchFertilizer.setChecked(sp.getNotificationsFertilize());
+    }
+    @Override
+    public void onBackPressed() {
+        sp.setNotificationsTime(LocalTime.of(notificationsTimePicker.getHour(), notificationsTimePicker.getMinute()));
+        sp.setNotificationsWater(switchWater.isChecked());
+        sp.setNotificationsFertilize(switchFertilizer.isChecked());
+        finish();
     }
 }
