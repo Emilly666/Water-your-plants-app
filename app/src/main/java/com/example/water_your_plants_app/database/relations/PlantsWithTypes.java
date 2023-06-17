@@ -10,4 +10,5 @@ public class PlantsWithTypes {
     public Plant plant;
     @Embedded
     public PlantType plantType;
+
 }

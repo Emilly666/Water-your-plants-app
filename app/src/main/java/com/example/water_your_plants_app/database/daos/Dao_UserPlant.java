@@ -27,8 +27,9 @@ public interface Dao_UserPlant {
             "FROM userPlants up " +
             "INNER JOIN plants p ON up.myPlant_id = p.plant_id " +
             "INNER JOIN plantTypes pt ON p.plantType_id = pt.type_id " +
-            "WHERE up.userPlant_id = :userPlantId")
-    UserPlantsWithTypes getUserPlantWithTypesById(int userPlantId);
+            "ORDER BY up.userPlant_id DESC " +
+            "LIMIT 1")
+    UserPlantsWithTypes getLatestUserPlantWithType();
     @Query("SELECT up.*, p.*, pt.* " +
             "FROM userPlants up " +
             "INNER JOIN plants p ON up.myPlant_id = p.plant_id " +

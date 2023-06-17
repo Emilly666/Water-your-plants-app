@@ -2,4 +2,7 @@
     <string name="app_name">WYP</string>
 
     <string name="add_plant">Add Plant</string>
+    <string name="plant_s_name">Plant\'s name</string>
+    <string name="add_a_nickname">Add a nickname</string>
+    <string name="close_button">close button</string>
 </resources>

@@ -20,6 +20,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.water_your_plants_app.R;
 import com.example.water_your_plants_app.database.AppDatabase;
 import com.example.water_your_plants_app.database.relations.UserPlantsWithTypes;
+import com.example.water_your_plants_app.database.tables.UserPlant;
 
 import java.util.List;
 
@@ -59,7 +60,6 @@ public class PlantsViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
         }
     }
 
-    // getItemCount() method returns the size of the list
     @Override
     public int getItemCount() {
         return mItemList == null ? 0 : mItemList.size();
@@ -87,14 +87,14 @@ public class PlantsViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
         }
     }
     private void populateItemRows(ItemViewHolder viewHolder, int position) {
-        UserPlantsWithTypes userPlantsWithTypes = mItemList.get(position).userPlantsWithTypes;
+        UserPlantsWithTypes userPlant = mItemList.get(position).userPlantsWithTypes;
 
-        viewHolder.buttonPlantItem.setText(userPlantsWithTypes.userPlant.plantNickname);
+        viewHolder.buttonPlantItem.setText(userPlant.userPlant.plantNickname);
 
         viewHolder.linear.setVisibility(View.GONE);
         viewHolder.buttonPlantItem.setCompoundDrawablesWithIntrinsicBounds(0, 0, R.drawable.baseline_arrow_drop_down_24, 0);
 
-        viewHolder.plantName.setText( userPlantsWithTypes.plantType.typeName + " : " + userPlantsWithTypes.plant.plantName);
+        viewHolder.plantName.setText( userPlant.plantType.typeName + " : " + userPlant.plant.plantName);
 
         viewHolder.buttonPlantItem.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -140,26 +140,34 @@ public class PlantsViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
                     }
                 });
 
-                closeButton.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
+                closeButton.setOnClickListener(view1 -> dialog.dismiss());
+
+                buttonSubmit.setOnClickListener(view12 -> {
+                    //add userPlant here
+                    int newPantID = db.dao_plant().checkIfPlantExistByName(autocomplete.getText().toString());
+
+                    if(newPantID==0){//plant does not exist in database
+
+                    }
+                    else {
+                        String name;
+                        if(plantNicknameTextView.getText().toString().equals("")){
+                            name = autocomplete.getText().toString();
+                        }else{
+                            name = plantNicknameTextView.getText().toString();
+                        }
+
+                        UserPlant userPlant = new UserPlant(newPantID, name);
+                        db.dao_userPlant().insertUserPlant(userPlant);
+
+                        mItemList.remove(mItemList.size()-1);
+                        UserPlantsWithTypes userPlantsWithTypes = db.dao_userPlant().getLatestUserPlantWithType();
+                        mItemList.add(new PlantListItem(userPlantsWithTypes));
+                        mItemList.add(null);
+
                         dialog.dismiss();
                     }
                 });
-
-                buttonSubmit.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-
-                        //add userPlant here
-
-
-
-                        dialog.dismiss();
-                    }
-                });
-
-
                 dialog.show();
             }
         });

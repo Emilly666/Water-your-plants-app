@@ -22,4 +22,7 @@ public interface Dao_Plant {
 
     @Query("SELECT PlantName FROM plants")
     List<String> getAllPlantNames();
+
+    @Query("SELECT plant_id FROM plants WHERE plantName LIKE :name")
+    int checkIfPlantExistByName(String name);
 }
