@@ -21,7 +21,7 @@ public class SettingsActivity extends AppCompatActivity {
 
         toolbar.setNavigationIcon(R.drawable.logowyp);
 
-        notificationsTimePicker = findViewById(R.id.notificationsTimePicker); // initiate a time picker
+        notificationsTimePicker = findViewById(R.id.notificationsTimePicker);
 
         if(DateFormat.is24HourFormat(this)){
             notificationsTimePicker.setIs24HourView(true);
