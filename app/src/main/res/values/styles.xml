@@ -16,5 +16,7 @@
         <item name="iconGravity">end</item>
         <item name="backgroundTint">?attr/colorSecondary</item>
     </style>
-
+    <style name="FAB" parent="">
+        <item name="cornerSize">0dp</item>
+    </style>
 </resources>

@@ -4,11 +4,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import android.os.Bundle;
+import android.text.format.DateFormat;
+import android.widget.TimePicker;
 
 public class SettingsActivity extends AppCompatActivity {
 
     Toolbar toolbar;
-
+    TimePicker notificationsTimePicker;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -18,5 +20,13 @@ public class SettingsActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         toolbar.setNavigationIcon(R.drawable.logowyp);
+
+        notificationsTimePicker = findViewById(R.id.notificationsTimePicker); // initiate a time picker
+
+        if(DateFormat.is24HourFormat(this)){
+            notificationsTimePicker.setIs24HourView(true);
+        }
+
+
     }
 }

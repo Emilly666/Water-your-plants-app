@@ -5,4 +5,9 @@
     <string name="plant_s_name">Plant\'s name</string>
     <string name="add_a_nickname">Add a nickname</string>
     <string name="close_button">close button</string>
+    <string name="save">SAVE</string>
+    <string name="water_notifications">Water notifications</string>
+    <string name="fertilize_notifications">Fertilize notifications</string>
+    <string name="notifications">NOTIFICATIONS</string>
+    <string name="notifications_time">Notification time</string>
 </resources>
