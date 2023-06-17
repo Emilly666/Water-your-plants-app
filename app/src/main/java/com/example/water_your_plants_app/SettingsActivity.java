@@ -27,8 +27,8 @@ public class SettingsActivity extends AppCompatActivity {
 
         toolbar = findViewById(R.id.toolbar);
         toolbar.setTitle(R.string.settings);
-        setSupportActionBar(toolbar);
         toolbar.setNavigationIcon(R.drawable.logowyp);
+        setSupportActionBar(toolbar);
 
         notificationsTimePicker = findViewById(R.id.notificationsTimePicker);
 
