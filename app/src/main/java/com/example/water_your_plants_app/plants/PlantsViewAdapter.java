@@ -3,6 +3,7 @@ package com.example.water_your_plants_app.plants;
 import android.app.Activity;
 import android.app.Dialog;
 import android.content.Context;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,6 +14,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -147,7 +149,9 @@ public class PlantsViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
                     int newPantID = db.dao_plant().checkIfPlantExistByName(autocomplete.getText().toString());
 
                     if(newPantID==0){//plant does not exist in database
-
+                        Toast toast = Toast.makeText(context, "Plant species not found in database", Toast.LENGTH_LONG);
+                        toast.setGravity(Gravity.CENTER_VERTICAL|Gravity.CENTER_HORIZONTAL, 0, 0);
+                        toast.show();
                     }
                     else {
                         String name;
