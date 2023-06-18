@@ -20,6 +20,12 @@ public interface Dao_PlantType {
     @Query("SELECT * FROM plantTypes")
     List<PlantType> getAllPlantTypes();
 
+    @Query("SELECT typeName FROM plantTypes")
+    List<String> getAllPlantTypesNames();
+
     @Query("SELECT * FROM plantTypes WHERE type_id = :id")
     PlantType getPlantTypeById(long id);
+
+    @Query("SELECT COUNT(type_id) FROM plantTypes;")
+    int getTypesCount();
 }

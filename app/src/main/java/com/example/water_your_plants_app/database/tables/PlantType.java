@@ -18,4 +18,8 @@ public class PlantType {
         this.soil = soil;
         this.fertilizerType = fertilizerType;
     }
+    @Override
+    public String toString() {
+        return this.typeName;
+    }
 }

@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">WYP</string>
     <string name="settings">SETTINGS</string>
+    <string name="add_new_species">ADD NEW SPECIES</string>
 
     <string name="add_plant">Add Plant</string>
     <string name="add_a_nickname">Add a nickname</string>

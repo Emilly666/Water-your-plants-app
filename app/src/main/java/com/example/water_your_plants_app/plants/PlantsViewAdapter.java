@@ -4,7 +4,6 @@ import android.app.Activity;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.drawable.Icon;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -23,7 +22,7 @@ import androidx.annotation.NonNull;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.water_your_plants_app.AddUserPlantActivity;
+import com.example.water_your_plants_app.AddPlantSpeciesActivity;
 import com.example.water_your_plants_app.R;
 import com.example.water_your_plants_app.database.AppDatabase;
 import com.example.water_your_plants_app.database.relations.UserPlantsWithTypes;
@@ -175,7 +174,6 @@ public class PlantsViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
             closeButton.setOnClickListener(view1 -> dialog.dismiss());
 
             buttonSubmit.setOnClickListener(view12 -> {
-                //add userPlant here
                 int newPantID = db.dao_plant().checkIfPlantExistByName(autocomplete.getText().toString());
 
                 if(newPantID==0){//plant does not exist in database
@@ -203,7 +201,7 @@ public class PlantsViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
                 }
             });
             addUserPlantButton.setOnClickListener(view13 -> {
-                Intent i = new Intent(myActivity, AddUserPlantActivity.class);
+                Intent i = new Intent(myActivity, AddPlantSpeciesActivity.class);
                 Bundle b = new Bundle();
                 b.putString("speciesName", autocomplete.getText().toString()    );
                 i.putExtras(b);

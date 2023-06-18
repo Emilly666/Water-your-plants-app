@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AddUserPlantActivity">
+    tools:context=".AddPlantSpeciesActivity">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
@@ -19,14 +19,37 @@
     <EditText
         android:id="@+id/speciesName"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
+        android:layout_height="48dp"
         android:layout_marginTop="4dp"
-        android:ems="10"
-        android:inputType="text"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar"
-        android:hint="@string/species_name"
         android:autofillHints="@string/species_name"
-        />
+        android:ems="10"
+        android:hint="@string/species_name"
+        android:inputType="text"
+        app:layout_constraintStart_toStartOf="@+id/guideline5"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+
+    <NumberPicker
+        android:id="@+id/plantTypePicker"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@+id/plantType"
+        app:layout_constraintTop_toBottomOf="@+id/speciesName" />
+
+    <TextView
+        android:id="@+id/plantType"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Plant type:"
+        app:layout_constraintBottom_toBottomOf="@+id/plantTypePicker"
+        app:layout_constraintStart_toStartOf="@+id/guideline5"
+        app:layout_constraintTop_toTopOf="@+id/plantTypePicker"
+        app:layout_constraintVertical_bias="0.515" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="40dp" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
