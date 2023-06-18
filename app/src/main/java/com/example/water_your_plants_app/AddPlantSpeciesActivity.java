@@ -1,12 +1,10 @@
 package com.example.water_your_plants_app;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
+import android.content.res.Resources;
 import android.os.Bundle;
-import android.view.DragEvent;
-import android.view.View;
 import android.widget.EditText;
 import android.widget.NumberPicker;
 import android.widget.TextView;
@@ -23,7 +21,7 @@ public class AddPlantSpeciesActivity extends AppCompatActivity {
 
     EditText speciesName;
     Toolbar toolbar;
-    NumberPicker plantTypePicker;
+    NumberPicker plantTypePicker, wateringPicker, fertilizingPicker;
     RangeSlider temperatureSlider;
     TextView temperatureFrom, temperatureTo;
 
@@ -44,6 +42,8 @@ public class AddPlantSpeciesActivity extends AppCompatActivity {
         temperatureSlider = findViewById(R.id.temperatureSlider);
         temperatureFrom = findViewById(R.id.temperatureFrom);
         temperatureTo = findViewById(R.id.temperatureTo);
+        wateringPicker = findViewById(R.id.waterFrequencyPicker);
+        fertilizingPicker = findViewById(R.id.fertilizerFrequencyPicker);
 
         //get entered species name from popup
         Bundle b = getIntent().getExtras();
@@ -56,7 +56,7 @@ public class AddPlantSpeciesActivity extends AppCompatActivity {
         toolbar.setNavigationIcon(R.drawable.logowyp);
         setSupportActionBar(toolbar);
 
-        //initialize numberPicker
+        //initialize plantTypePicker
         List<String> typesList = db.dao_plantType().getAllPlantTypesNames();
         plantTypePicker.setMinValue(0);
         plantTypePicker.setMaxValue(typesList.size()-1);
@@ -66,9 +66,18 @@ public class AddPlantSpeciesActivity extends AppCompatActivity {
         //setup temperature slider
         temperatureSlider.setValues(0f,50f);
         temperatureSlider.addOnChangeListener((slider, value, fromUser) -> {
-            temperatureFrom.setText(String.format("%d°C", Math.round(slider.getValues().get(0))));
-            temperatureTo.setText(String.format("%d°C", Math.round(slider.getValues().get(1))));
+
+
+            temperatureFrom.setText(String.format(getResources().getString(R.string.temp), Math.round(slider.getValues().get(0))));
+            temperatureTo.setText(String.format(getResources().getString(R.string.temp), Math.round(slider.getValues().get(1))));
         });
 
+        //initialize wateringPicker
+        wateringPicker.setMinValue(1);
+        wateringPicker.setMaxValue(100);
+
+        //initialize fertilizingPicker
+        fertilizingPicker.setMinValue(1);
+        fertilizingPicker.setMaxValue(100);
     }
 }

@@ -32,7 +32,7 @@
     <NumberPicker
         android:id="@+id/plantTypePicker"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="150dp"
         android:layout_marginTop="10dp"
         app:layout_constraintStart_toEndOf="@+id/plantType"
         app:layout_constraintTop_toBottomOf="@+id/speciesName" />
@@ -89,7 +89,7 @@
         android:id="@+id/temperatureFrom"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="0°C"
+        android:text="@string/celsius0"
         app:layout_constraintStart_toStartOf="@+id/guideline5"
         app:layout_constraintTop_toBottomOf="@+id/textView5" />
 
@@ -97,7 +97,7 @@
         android:id="@+id/temperatureTo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="50°C"
+        android:text="@string/celsius50"
         app:layout_constraintEnd_toStartOf="@+id/guideline7"
         app:layout_constraintTop_toBottomOf="@+id/textView5" />
 
@@ -127,7 +127,7 @@
         android:layout_marginEnd="5dp"
         app:layout_constraintEnd_toStartOf="@+id/guideline7"
         app:layout_constraintTop_toBottomOf="@+id/lightLabel"
-        app:srcCompat="@drawable/baseline_wb_sunny_24"/>
+        app:srcCompat="@drawable/baseline_wb_sunny_24" />
 
     <SeekBar
         android:id="@+id/lightSlider"
@@ -139,5 +139,66 @@
         app:layout_constraintEnd_toStartOf="@+id/guideline7"
         app:layout_constraintStart_toStartOf="@+id/guideline5"
         app:layout_constraintTop_toBottomOf="@+id/cloudIcon" />
+
+    <com.example.water_your_plants_app.VerticalTextView
+        android:id="@+id/verticalTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="left|center_vertical"
+        android:padding="4dip"
+        android:text="@string/watering_frequency_days"
+        app:layout_constraintBottom_toBottomOf="@+id/verticalTextView2"
+        app:layout_constraintStart_toStartOf="@+id/guideline5"
+        app:layout_constraintTop_toTopOf="@+id/verticalTextView2"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <NumberPicker
+        android:id="@+id/waterFrequencyPicker"
+        android:layout_width="wrap_content"
+        android:layout_height="150dp"
+
+        android:layout_marginStart="5dp"
+        app:layout_constraintBottom_toBottomOf="@+id/verticalTextView2"
+        app:layout_constraintStart_toEndOf="@+id/verticalTextView"
+        app:layout_constraintTop_toTopOf="@+id/verticalTextView2" />
+
+    <com.example.water_your_plants_app.VerticalTextView
+        android:id="@+id/verticalTextView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="left|center_vertical"
+
+        android:layout_marginTop="8dp"
+        android:padding="4dip"
+
+        android:text="@string/fertilizing_frequency_days"
+        app:layout_constraintStart_toStartOf="@+id/guideline8"
+        app:layout_constraintTop_toBottomOf="@+id/lightSlider" />
+
+    <NumberPicker
+        android:id="@+id/fertilizerFrequencyPicker"
+        android:layout_width="wrap_content"
+        android:layout_height="150dp"
+
+        android:layout_marginStart="5dp"
+        app:layout_constraintBottom_toBottomOf="@+id/verticalTextView2"
+        app:layout_constraintStart_toEndOf="@+id/verticalTextView2"
+        app:layout_constraintTop_toTopOf="@+id/verticalTextView2" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.5" />
+
+    <Button
+        android:id="@+id/addPlantSpeciesButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="40dp"
+        android:text="@string/add"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/guideline7" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
