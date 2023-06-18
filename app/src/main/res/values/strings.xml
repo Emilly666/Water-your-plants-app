@@ -14,4 +14,6 @@
     <string name="add_species">add species</string>
     <string name="species_name">Species name</string>
     <string name="plants_nickname">plants nickname</string>
+    <string name="plant_type">Plant type:</string>
+    <string name="best_temperature_range">Best temperature range:</string>
 </resources>
