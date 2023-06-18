@@ -97,7 +97,7 @@
             app:layout_constraintBottom_toBottomOf="@+id/light"
             app:layout_constraintEnd_toStartOf="@+id/guideline6"
             app:layout_constraintTop_toTopOf="@+id/light"
-            app:srcCompat="@drawable/weather_sunny" />
+            app:srcCompat="@drawable/baseline_wb_sunny_24" />
 
         <TextView
             android:id="@+id/humidity"

@@ -15,5 +15,7 @@
     <string name="species_name">Species name</string>
     <string name="plants_nickname">plants nickname</string>
     <string name="plant_type">Plant type:</string>
-    <string name="best_temperature_range">Best temperature range:</string>
+    <string name="best_temperature_range">Preferable temperature range:</string>
+    <string name="preferable_light">Preferable light:</string>
+    <string name="soil_description">Soil description</string>
 </resources>

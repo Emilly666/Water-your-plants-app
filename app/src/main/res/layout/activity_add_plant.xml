@@ -18,13 +18,14 @@
 
     <EditText
         android:id="@+id/speciesName"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="48dp"
         android:layout_marginTop="4dp"
         android:autofillHints="@string/species_name"
         android:ems="10"
         android:hint="@string/species_name"
         android:inputType="text"
+        app:layout_constraintEnd_toStartOf="@+id/guideline7"
         app:layout_constraintStart_toStartOf="@+id/guideline5"
         app:layout_constraintTop_toBottomOf="@+id/toolbar" />
 
@@ -99,5 +100,56 @@
         android:text="50°C"
         app:layout_constraintEnd_toStartOf="@+id/guideline7"
         app:layout_constraintTop_toBottomOf="@+id/textView5" />
+
+    <TextView
+        android:id="@+id/lightLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="@string/preferable_light"
+        app:layout_constraintEnd_toStartOf="@+id/guideline7"
+        app:layout_constraintStart_toStartOf="@+id/guideline5"
+        app:layout_constraintTop_toBottomOf="@+id/temperatureSlider" />
+
+    <ImageView
+        android:id="@+id/sunIcon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        app:layout_constraintStart_toStartOf="@+id/guideline5"
+        app:layout_constraintTop_toBottomOf="@+id/lightLabel"
+        app:srcCompat="@drawable/baseline_cloud_24" />
+
+    <ImageView
+        android:id="@+id/cloudIcon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="5dp"
+        app:layout_constraintEnd_toStartOf="@+id/guideline7"
+        app:layout_constraintTop_toBottomOf="@+id/lightLabel"
+        app:srcCompat="@drawable/baseline_wb_sunny_24"/>
+
+    <SeekBar
+        android:id="@+id/lightSlider"
+        style="@style/Widget.AppCompat.SeekBar.Discrete"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:max="4"
+        android:progress="2"
+        app:layout_constraintEnd_toStartOf="@+id/guideline7"
+        app:layout_constraintStart_toStartOf="@+id/guideline5"
+        app:layout_constraintTop_toBottomOf="@+id/cloudIcon" />
+
+    <EditText
+        android:id="@+id/editTextText"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="10dp"
+        android:ems="10"
+        android:hint="@string/soil_description"
+        android:inputType="text"
+        app:layout_constraintEnd_toStartOf="@+id/guideline7"
+        app:layout_constraintStart_toStartOf="@+id/guideline5"
+        app:layout_constraintTop_toBottomOf="@+id/lightSlider" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
