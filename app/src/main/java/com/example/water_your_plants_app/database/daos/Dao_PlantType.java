@@ -26,6 +26,9 @@ public interface Dao_PlantType {
     @Query("SELECT * FROM plantTypes WHERE type_id = :id")
     PlantType getPlantTypeById(long id);
 
-    @Query("SELECT COUNT(type_id) FROM plantTypes;")
+    @Query("SELECT COUNT(type_id) FROM plantTypes")
     int getTypesCount();
+
+    @Query("SELECT type_id FROM plantTypes WHERE typeName = :name")
+    long getTypeIdByName(String name);
 }

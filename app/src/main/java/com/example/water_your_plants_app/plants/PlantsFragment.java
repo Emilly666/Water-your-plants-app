@@ -50,10 +50,17 @@ public class PlantsFragment extends Fragment {
     }
     void getAllPlants(){
         List<UserPlantsWithTypes> listDb = db.dao_userPlant().getAllUserPlantsWithTypes();
+        plantsArrayList.clear();
         for(int i = 0; i < listDb.size(); i ++){
             plantsArrayList.add(new PlantListItem(listDb.get(i)
             ));
         }
         plantsArrayList.add(null);
+    }
+    @Override
+    public void onResume() {
+        super.onResume();
+        getAllPlants();
+        plantsViewAdapter.notifyItemChanged(0,plantsArrayList.size());
     }
 }
