@@ -3,6 +3,7 @@ package com.example.water_your_plants_app.plants;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Build;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
@@ -21,6 +22,7 @@ import com.example.water_your_plants_app.AddUserPlantActivity;
 import com.example.water_your_plants_app.R;
 import com.example.water_your_plants_app.database.AppDatabase;
 import com.example.water_your_plants_app.database.relations.UserPlantsWithTypes;
+import com.google.android.material.color.MaterialColors;
 
 import java.util.List;
 

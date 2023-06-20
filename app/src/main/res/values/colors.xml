@@ -14,4 +14,7 @@
     <color name="white">#FFFFFF</color>
 
     <color name="supportActionBarColor">?attr/colorPrimary</color>
+
+    <color name="test1">#FF0000</color>
+    <color name="test2">#00FF00</color>
 </resources>

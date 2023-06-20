@@ -15,7 +15,7 @@
         android:text="@string/plants_nickname"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:layout_margin="10dp"/>
+        android:layout_margin="10dp" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/plantDescription"
@@ -59,7 +59,8 @@
             android:layout_height="wrap_content"
             app:layout_constraintBottom_toBottomOf="@+id/typeName"
             app:layout_constraintEnd_toStartOf="@+id/guideline6"
-            app:layout_constraintTop_toTopOf="@+id/typeName" />
+            app:layout_constraintTop_toTopOf="@+id/typeName"
+            android:backgroundTint="?attr/android:textColorPrimary" />
 
         <TextView
             android:id="@+id/temperature"
@@ -78,7 +79,8 @@
             app:layout_constraintBottom_toBottomOf="@+id/temperature"
             app:layout_constraintEnd_toStartOf="@+id/guideline6"
             app:layout_constraintTop_toTopOf="@+id/temperature"
-            app:srcCompat="@drawable/thermometer_lines" />
+            app:srcCompat="@drawable/thermometer_lines"
+            app:tint="?attr/android:textColorPrimary" />
 
         <TextView
             android:id="@+id/light"
@@ -97,7 +99,8 @@
             app:layout_constraintBottom_toBottomOf="@+id/light"
             app:layout_constraintEnd_toStartOf="@+id/guideline6"
             app:layout_constraintTop_toTopOf="@+id/light"
-            app:srcCompat="@drawable/baseline_wb_sunny_24" />
+            app:srcCompat="@drawable/baseline_wb_sunny_24"
+            app:tint="?attr/android:textColorPrimary"/>
 
         <TextView
             android:id="@+id/humidity"
@@ -146,7 +149,8 @@
             app:layout_constraintBottom_toBottomOf="@+id/humidity"
             app:layout_constraintEnd_toStartOf="@+id/guideline6"
             app:layout_constraintTop_toTopOf="@+id/humidity"
-            app:srcCompat="@drawable/water_percent" />
+            app:srcCompat="@drawable/water_percent"
+            app:tint="?attr/android:textColorPrimary"/>
 
         <ImageView
             android:id="@+id/soilIcon"
@@ -155,7 +159,8 @@
             app:layout_constraintBottom_toBottomOf="@+id/soil"
             app:layout_constraintEnd_toStartOf="@+id/guideline6"
             app:layout_constraintTop_toTopOf="@+id/soil"
-            app:srcCompat="@drawable/baseline_scatter_plot_24" />
+            app:srcCompat="@drawable/baseline_scatter_plot_24"
+            app:tint="?attr/android:textColorPrimary"/>
 
         <ImageView
             android:id="@+id/fertilizerIcon"
@@ -164,16 +169,19 @@
             app:layout_constraintBottom_toBottomOf="@+id/fertilizer"
             app:layout_constraintEnd_toStartOf="@+id/guideline6"
             app:layout_constraintTop_toTopOf="@+id/fertilizer"
-            app:srcCompat="@drawable/fertilizer_24" />
+            app:srcCompat="@drawable/fertilizer_24"
+            app:tint="?attr/android:textColorPrimary"/>
 
         <ImageView
+
             android:id="@+id/waterIcon"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:layout_constraintBottom_toBottomOf="@+id/waterFrequency"
             app:layout_constraintEnd_toStartOf="@+id/guideline6"
             app:layout_constraintTop_toTopOf="@+id/waterFrequency"
-            app:srcCompat="@drawable/watering_can_24" />
+            app:srcCompat="@drawable/watering_can_24"
+            app:tint="?attr/android:textColorPrimary"/>
 
         <ImageButton
             android:id="@+id/vertMenu"
@@ -182,7 +190,8 @@
             android:backgroundTint="#00FFFFFF"
             android:src="@drawable/baseline_more_vert_24"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:tint="?attr/android:textColorPrimary"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
