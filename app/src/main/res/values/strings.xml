@@ -29,6 +29,10 @@
     <string name="temp2">From %1$d°C to %2$d°C</string>
     <string name="plants_nickname">plants nickname</string>
 
+    <!--plant list item popup menu-->
+    <string name="popup_menu_edit">Edit</string>
+    <string name="popup_menu_delete">Delete</string>
+
     <!--add new userPlant-->
     <string name="add_plant">Add Plant</string>
     <string name="add_a_nickname">Add a nickname</string>
@@ -44,5 +48,6 @@
     <string name="fertilizing_frequency_days">Fertilizing frequency(days)</string>
     <string name="iconlight1">Icon light 1</string>
     <string name="iconlight5">Icon light 5</string>
+
 
 </resources>

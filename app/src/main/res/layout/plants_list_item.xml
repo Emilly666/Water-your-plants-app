@@ -175,5 +175,14 @@
             app:layout_constraintTop_toTopOf="@+id/waterFrequency"
             app:srcCompat="@drawable/watering_can_24" />
 
+        <ImageButton
+            android:id="@+id/vertMenu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#00FFFFFF"
+            android:src="@drawable/baseline_more_vert_24"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

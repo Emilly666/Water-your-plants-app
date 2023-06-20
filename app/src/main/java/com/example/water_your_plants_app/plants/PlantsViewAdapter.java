@@ -3,11 +3,14 @@ package com.example.water_your_plants_app.plants;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.os.Build;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.PopupMenu;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -16,6 +19,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.water_your_plants_app.AddUserPlantActivity;
 import com.example.water_your_plants_app.R;
+import com.example.water_your_plants_app.database.AppDatabase;
 import com.example.water_your_plants_app.database.relations.UserPlantsWithTypes;
 
 import java.util.List;
@@ -26,6 +30,7 @@ public class PlantsViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
     private List<PlantListItem> mItemList;
     private Context context;
     private final Activity myActivity;
+    AppDatabase db;
 
     public PlantsViewAdapter(List<PlantListItem> itemList, Activity activity) {
         mItemList = itemList;
@@ -68,7 +73,7 @@ public class PlantsViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
         Button buttonPlantItem;
         ConstraintLayout plantDescription;
         TextView plantName, typeName, temperature, light, humidity, soil, fertilizer, waterFrequency;
-        ImageView typeIcon;
+        ImageView typeIcon, vertMenu;
         public ItemViewHolder(@NonNull View itemView) {
             super(itemView);
             buttonPlantItem = itemView.findViewById(R.id.buttonPlantItem);
@@ -82,6 +87,7 @@ public class PlantsViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
             fertilizer = itemView.findViewById(R.id.fertilizer);
             waterFrequency = itemView.findViewById(R.id.waterFrequency);
             typeIcon = itemView.findViewById(R.id.typeIcon);
+            vertMenu = itemView.findViewById(R.id.vertMenu);
         }
     }
     public static class AddButtonViewHolder extends RecyclerView.ViewHolder {
@@ -137,7 +143,32 @@ public class PlantsViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
                 icon = R.drawable.local_florist_24;
         }
         viewHolder.typeIcon.setBackgroundResource(icon);
+        viewHolder.vertMenu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                PopupMenu menu = new PopupMenu(context, viewHolder.vertMenu);
+                menu.inflate(R.menu.plant_item_popup_menu);
+                db = AppDatabase.getDatabase(context);
+                menu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
+                    @Override
+                    public boolean onMenuItemClick(MenuItem item) {
+                        if (item.getItemId() == R.id.action_edit) {
 
+                        }
+                        if (item.getItemId() == R.id.action_delete) {
+                            db.dao_userPlant().deleteUserPlantWitTypes((int)userPlant.userPlant.userPlant_id);
+                            mItemList.remove(position);
+                            notifyDataSetChanged();
+                        }
+                        return false;
+                    }
+                });
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+                    menu.setForceShowIcon(true);
+                }
+                menu.show();
+            }
+        });
     }
     private void addUserPlantItem(AddButtonViewHolder viewHolder, int position) {
         viewHolder.addUserPlantButton.setOnClickListener(view -> {

@@ -18,6 +18,9 @@ public interface Dao_UserPlant {
     @Delete
     void deleteUserPlant(UserPlant userPlant);
 
+    @Query("DELETE FROM userPlants WHERE userPlant_id = :id")
+    void deleteUserPlantWitTypes(int id);
+
     @Query("SELECT * FROM userPlants")
     List<UserPlant> getAllUserPlants();
     @Query("SELECT * FROM userPlants WHERE userPlant_id = :id")
