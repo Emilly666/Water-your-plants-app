@@ -5,24 +5,44 @@
     <string name="add_new_species">ADD NEW PLANT SPECIES</string>
     <string name="add_new_plant">ADD NEW PLANT</string>
 
-    <string name="add_plant">Add Plant</string>
-    <string name="add_a_nickname">Add a nickname</string>
-    <string name="close_button">close popup</string>
+    <!--universal-->
+    <string name="add">ADD</string>
     <string name="save">SAVE</string>
+
+    <!--settings-->
+    <string name="notifications">NOTIFICATIONS</string>
     <string name="water_notifications">Water notifications</string>
     <string name="fertilize_notifications">Fertilize notifications</string>
-    <string name="notifications">NOTIFICATIONS</string>
     <string name="notifications_time">Notifications time</string>
-    <string name="add_species">add species</string>
-    <string name="species_name">Species name</string>
+
+    <!--plant list item-->
+    <plurals name="fertilizeEvery">
+        <item quantity="one" formatted="true">Fertilize everyday</item>
+        <item quantity="other" formatted="true">Fertilize every %1$d days</item>
+    </plurals>
+    <plurals name="waterEvery">
+        <item quantity="one" formatted="true">Water everyday</item>
+        <item quantity="other" formatted="true">Water every %1$d days</item>
+    </plurals>
+    <string name="hum">%1$d\%%</string>
+    <string name="temp">%1$d°C</string>
+    <string name="temp2">From %1$d°C to %2$d°C</string>
     <string name="plants_nickname">plants nickname</string>
+
+    <!--add new userPlant-->
+    <string name="add_plant">Add Plant</string>
+    <string name="add_a_nickname">Add a nickname</string>
+    <string name="add_species_button">add species</string>
+
+    <!--add new plant species-->
+    <string name="species_name">Species name</string>
     <string name="plant_type">Plant type:</string>
     <string name="best_temperature_range">Preferable temperature range:</string>
     <string name="preferable_light">Preferable light:</string>
-    <string name="soil_description">Soil description</string>
+    <string name="preferable_humidity">Preferable humidity: %1$d\%%</string>
     <string name="watering_frequency_days">Watering frequency(days)</string>
     <string name="fertilizing_frequency_days">Fertilizing frequency(days)</string>
-    <string name="add">Add</string>
-    <string name="temp">%1$d°C</string>
-    <string name="preferable_humidity">Preferable humidity: %1$d\%%</string>
+    <string name="iconlight1">Icon light 1</string>
+    <string name="iconlight5">Icon light 5</string>
+
 </resources>

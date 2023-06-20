@@ -115,14 +115,15 @@ public class PlantsViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
         viewHolder.light.setText(userPlant.plant.light);
         viewHolder.soil.setText(userPlant.plantType.soil);
 
-        String hum = userPlant.plant.humidity + " %";
-        viewHolder.humidity.setText(hum);
-        String temp = "from " + userPlant.plant.temperatureFrom + " °C to " + userPlant.plant.temperatureTo + " °C";
-        viewHolder.temperature.setText(temp);
-        String fertilizing = "Fertilize every " + userPlant.plant.fertilizerFrequency + " days, with " + userPlant.plantType.fertilizerType;
-        viewHolder.fertilizer.setText(fertilizing);
-        String waterFreq = "Water every " + userPlant.plant.wateringFrequency + " days";
-        viewHolder.waterFrequency.setText(waterFreq);
+        viewHolder.humidity.setText( String.format(context.getString(R.string.hum), userPlant.plant.humidity) );
+        if(userPlant.plant.temperatureFrom == userPlant.plant.temperatureTo){
+            viewHolder.temperature.setText( String.format(context.getString(R.string.temp), userPlant.plant.temperatureFrom) );
+        }
+        else{
+            viewHolder.temperature.setText( String.format(context.getString(R.string.temp2), userPlant.plant.temperatureFrom, userPlant.plant.temperatureTo) );
+        }
+        viewHolder.fertilizer.setText( String.format(context.getResources().getQuantityString(R.plurals.fertilizeEvery, userPlant.plant.fertilizerFrequency, userPlant.plant.fertilizerFrequency)) );
+        viewHolder.waterFrequency.setText( String.format(context.getResources().getQuantityString(R.plurals.waterEvery, userPlant.plant.wateringFrequency, userPlant.plant.fertilizerFrequency)) );
 
         int icon;
         switch ((int) userPlant.plantType.type_id){ // placeholders icons

@@ -103,7 +103,7 @@ public class AddPlantSpeciesActivity extends AppCompatActivity {
             Toast.makeText(context, "Enter species name!", Toast.LENGTH_SHORT).show();
             return;
         }
-        if ( (str.startsWith(" ") && str.endsWith(" ")) ){
+        if ( (str.startsWith(" ") || str.endsWith(" ")) ){
             Toast.makeText(context, "Incorrect species name!", Toast.LENGTH_SHORT).show();
             return;
         }

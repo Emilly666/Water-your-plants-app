@@ -11,7 +11,6 @@
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:background="?attr/colorPrimary"
-        android:title="@string/settings"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -120,7 +119,8 @@
         android:layout_marginTop="-3dp"
         app:layout_constraintStart_toStartOf="@+id/guideline5"
         app:layout_constraintTop_toBottomOf="@+id/lightLabel"
-        app:srcCompat="@drawable/baseline_cloud_24" />
+        app:srcCompat="@drawable/baseline_cloud_24"
+        android:contentDescription="@string/iconlight1"/>
 
     <ImageView
         android:id="@+id/cloudIcon"
@@ -130,7 +130,8 @@
         android:layout_marginEnd="5dp"
         app:layout_constraintEnd_toStartOf="@+id/guideline7"
         app:layout_constraintTop_toBottomOf="@+id/lightLabel"
-        app:srcCompat="@drawable/baseline_wb_sunny_24" />
+        app:srcCompat="@drawable/baseline_wb_sunny_24"
+        android:contentDescription="@string/iconlight5"/>
 
     <com.google.android.material.slider.Slider
         app:haloRadius="16dp"
