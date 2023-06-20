@@ -38,7 +38,7 @@ Get notifications to remind you about taking care of your plants.
 - [x] Plants list
 - [ ] Home tasks list
 - [x] Adding plants
-- [ ] Adding custom plants
+- [x] Adding custom plants
 - [ ] Generating tasks lists and filling calendar
 - [ ] Push notifications
 
