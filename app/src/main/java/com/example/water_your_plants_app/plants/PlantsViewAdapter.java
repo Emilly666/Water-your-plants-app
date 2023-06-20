@@ -152,9 +152,6 @@ public class PlantsViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
                 menu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
                     @Override
                     public boolean onMenuItemClick(MenuItem item) {
-                        if (item.getItemId() == R.id.action_edit) {
-
-                        }
                         if (item.getItemId() == R.id.action_delete) {
                             db.dao_userPlant().deleteUserPlantWitTypes((int)userPlant.userPlant.userPlant_id);
                             mItemList.remove(position);
