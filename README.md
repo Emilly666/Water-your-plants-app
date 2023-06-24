@@ -40,7 +40,7 @@ Get notifications to remind you about taking care of your plants.
 - [x] Adding plants
 - [x] Adding custom plants
 - [ ] Generating tasks lists and filling calendar
-- [ ] Push notifications
+- [ ] Notifications
 
 ## Authors
 
