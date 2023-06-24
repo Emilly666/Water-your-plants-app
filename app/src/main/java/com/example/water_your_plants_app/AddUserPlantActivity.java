@@ -85,7 +85,7 @@ public class AddUserPlantActivity extends AppCompatActivity {
     public void setUpAutocomplete(){
         List<String> listDb = db.dao_plant().getAllPlantNames();
         String[] arr = listDb.toArray(new String[0]);
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(context,android.R.layout.select_dialog_item, arr);
+        AutocompleteArrayAdapter adapter = new AutocompleteArrayAdapter(this, android.R.layout.simple_dropdown_item_1line, arr);
         autocomplete.setThreshold(0);
         autocomplete.setAdapter(adapter);
     }

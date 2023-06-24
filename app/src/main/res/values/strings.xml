@@ -2,8 +2,8 @@
     <!--toolbar titles-->
     <string name="app_name">WYP</string>
     <string name="settings">SETTINGS</string>
-    <string name="add_new_species">ADD NEW PLANT SPECIES</string>
-    <string name="add_new_plant">ADD NEW PLANT</string>
+    <string name="add_new_species">ADD PLANT SPECIES</string>
+    <string name="add_new_plant">ADD PLANT</string>
 
     <!--universal-->
     <string name="add">ADD</string>
@@ -44,8 +44,8 @@
     <string name="best_temperature_range">Preferable temperature range:</string>
     <string name="preferable_light">Preferable light:</string>
     <string name="preferable_humidity">Preferable humidity: %1$d\%%</string>
-    <string name="watering_frequency_days">Watering frequency(days)</string>
-    <string name="fertilizing_frequency_days">Fertilizing frequency(days)</string>
+    <string name="watering_frequency_days">Watering frequency (days)</string>
+    <string name="fertilizing_frequency_days">Fertilizing frequency (days)</string>
     <string name="iconlight1">Icon light 1</string>
     <string name="iconlight5">Icon light 5</string>
 
