@@ -130,8 +130,8 @@ public class PlantsViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
         else{
             viewHolder.temperature.setText( String.format(context.getString(R.string.temp2), userPlant.plant.temperatureFrom, userPlant.plant.temperatureTo) );
         }
-        viewHolder.fertilizer.setText( String.format(context.getResources().getQuantityString(R.plurals.fertilizeEvery, userPlant.plant.fertilizerFrequency, userPlant.plant.fertilizerFrequency)) );
-        viewHolder.waterFrequency.setText( String.format(context.getResources().getQuantityString(R.plurals.waterEvery, userPlant.plant.wateringFrequency, userPlant.plant.fertilizerFrequency)) );
+        viewHolder.fertilizer.setText( String.format(context.getResources().getQuantityString(R.plurals.fertilizeEvery, userPlant.plant.fertilizerFrequency, userPlant.plant.fertilizerFrequency, userPlant.plantType.fertilizerType)) );
+        viewHolder.waterFrequency.setText( String.format(context.getResources().getQuantityString(R.plurals.waterEvery, userPlant.plant.wateringFrequency, userPlant.plant.wateringFrequency)) );
 
         int icon;
         switch ((int) userPlant.plantType.type_id){ // placeholders icons

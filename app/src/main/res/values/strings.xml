@@ -17,8 +17,8 @@
 
     <!--plant list item-->
     <plurals name="fertilizeEvery">
-        <item quantity="one" formatted="true">Fertilize everyday</item>
-        <item quantity="other" formatted="true">Fertilize every %1$d days</item>
+        <item quantity="one" formatted="true">Fertilize everyday, with %2$s</item>
+        <item quantity="other" formatted="true">Fertilize every %1$d days, with %2$s</item>
     </plurals>
     <plurals name="waterEvery">
         <item quantity="one" formatted="true">Water everyday</item>
