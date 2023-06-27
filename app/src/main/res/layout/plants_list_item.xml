@@ -169,7 +169,7 @@
             app:layout_constraintBottom_toBottomOf="@+id/fertilizer"
             app:layout_constraintEnd_toStartOf="@+id/guideline6"
             app:layout_constraintTop_toTopOf="@+id/fertilizer"
-            app:srcCompat="@drawable/fertilizer_24"
+            app:srcCompat="@drawable/fertilizer__2_"
             app:tint="?attr/android:textColorPrimary"/>
 
         <ImageView
@@ -180,7 +180,7 @@
             app:layout_constraintBottom_toBottomOf="@+id/waterFrequency"
             app:layout_constraintEnd_toStartOf="@+id/guideline6"
             app:layout_constraintTop_toTopOf="@+id/waterFrequency"
-            app:srcCompat="@drawable/watering_can_24"
+            app:srcCompat="@drawable/wateringcan"
             app:tint="?attr/android:textColorPrimary"/>
 
         <ImageButton

@@ -1,0 +1,70 @@
+<vector android:height="24dp" android:viewportHeight="360"
+    android:viewportWidth="360" android:width="24dp"
+    xmlns:aapt="http://schemas.android.com/aapt" xmlns:android="http://schemas.android.com/apk/res/android">
+    <path android:fillColor="#2b3023" android:fillType="evenOdd"
+        android:pathData="M235.58,183.61L255.07,186.09L235.71,190.01Z"
+        android:strokeColor="#2b3023" android:strokeLineCap="square"
+        android:strokeLineJoin="bevel" android:strokeWidth="1.54"/>
+    <path android:fillColor="#2b3023" android:fillType="evenOdd"
+        android:pathData="M141.36,61.39L100.85,47.31L137.81,68.84Z"
+        android:strokeColor="#2b3023" android:strokeLineCap="square"
+        android:strokeLineJoin="bevel" android:strokeWidth="1.44"/>
+    <path android:fillType="evenOdd"
+        android:pathData="M127.74,264.68L126.97,56.13C126.68,8.93 212.37,6.7 212.55,55.74L213.32,261.98Z"
+        android:strokeAlpha="0" android:strokeLineCap="square"
+        android:strokeLineJoin="bevel" android:strokeWidth="0">
+        <aapt:attr name="android:fillColor">
+            <gradient android:endX="213.32" android:endY="264.68"
+                android:startX="126.68" android:startY="6.7"
+                android:tileMode="clamp" android:type="linear">
+                <item android:color="#FF6AA482" android:offset="0"/>
+                <item android:color="#FF157C40" android:offset="1"/>
+            </gradient>
+        </aapt:attr>
+    </path>
+    <path android:fillType="evenOdd"
+        android:pathData="M186.42,274.35L185.94,142.11C185.75,112.18 240.09,110.77 240.2,141.86L240.69,272.64Z"
+        android:strokeAlpha="0" android:strokeLineCap="square"
+        android:strokeLineJoin="bevel" android:strokeWidth="0">
+        <aapt:attr name="android:fillColor">
+            <gradient android:endX="240.69" android:endY="274.35"
+                android:startX="185.75" android:startY="110.77"
+                android:tileMode="clamp" android:type="linear">
+                <item android:color="#FF77CC9A" android:offset="0.01"/>
+                <item android:color="#FF3D8F5F" android:offset="1"/>
+            </gradient>
+        </aapt:attr>
+    </path>
+    <path android:fillColor="#333333" android:fillType="evenOdd"
+        android:pathData="M107.02,247.84L253.07,247.43C253.96,314.9 250.08,360.13 217.58,360.02L141.29,359.21C107.23,358.39 106.05,301.26 107.02,247.84Z"
+        android:strokeColor="#333333" android:strokeLineCap="square"
+        android:strokeLineJoin="bevel" android:strokeWidth="1.44"/>
+    <path android:fillColor="#2b3023" android:fillType="evenOdd"
+        android:pathData="M217.59,215.64L237.08,218.12L217.72,222.05Z"
+        android:strokeColor="#2b3023" android:strokeLineCap="square"
+        android:strokeLineJoin="bevel" android:strokeWidth="1.54"/>
+    <path android:fillColor="#2b3023" android:fillType="evenOdd"
+        android:pathData="M195.69,159.36L176.2,161.84L195.56,165.76Z"
+        android:strokeColor="#2b3023" android:strokeLineCap="square"
+        android:strokeLineJoin="bevel" android:strokeWidth="1.54"/>
+    <path android:fillColor="#2b3023" android:fillType="evenOdd"
+        android:pathData="M199.85,106.24L242.62,109.44L200.15,114.49Z"
+        android:strokeColor="#2b3023" android:strokeLineCap="square"
+        android:strokeLineJoin="bevel" android:strokeWidth="1.54"/>
+    <path android:fillColor="#2b3023" android:fillType="evenOdd"
+        android:pathData="M142.64,181.3L99.88,184.5L142.34,189.55Z"
+        android:strokeColor="#2b3023" android:strokeLineCap="square"
+        android:strokeLineJoin="bevel" android:strokeWidth="1.54"/>
+    <path android:fillColor="#2b3023" android:fillType="evenOdd"
+        android:pathData="M181.81,32.09L212.68,2.32L188.17,37.36Z"
+        android:strokeColor="#2b3023" android:strokeLineCap="square"
+        android:strokeLineJoin="bevel" android:strokeWidth="1.44"/>
+    <path android:fillColor="#2b3023" android:fillType="evenOdd"
+        android:pathData="M138.79,86.08C124.53,87.15 110.28,88.21 96.02,89.28L138.49,94.33Z"
+        android:strokeColor="#2b3023" android:strokeLineCap="square"
+        android:strokeLineJoin="bevel" android:strokeWidth="1.54"/>
+    <path android:fillColor="#2b3023" android:fillType="evenOdd"
+        android:pathData="M227.71,136.77L242.79,124.18L232.5,141.03Z"
+        android:strokeColor="#2b3023" android:strokeLineCap="square"
+        android:strokeLineJoin="bevel" android:strokeWidth="1.54"/>
+</vector>

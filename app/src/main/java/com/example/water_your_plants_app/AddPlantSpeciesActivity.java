@@ -119,19 +119,19 @@ public class AddPlantSpeciesActivity extends AppCompatActivity {
         String light;
         switch( Math.round(lightSlider.getValue())  ) {
             case 0:
-                light = "some light 1";
+                light = "Mostly shadow";
                 break;
             case 1:
-                light = "some light 2";
+                light = "More shadow";
                 break;
             case 3:
-                light = "some light 4";
+                light = "A lot of sun";
                 break;
             case 4:
-                light = "some light 5";
+                light = "Direct sun";
                 break;
             default: //default position of seekBar
-                light = "some light 3";
+                light = "Normal sun";
         }
 
         Plant newPlant = new Plant(

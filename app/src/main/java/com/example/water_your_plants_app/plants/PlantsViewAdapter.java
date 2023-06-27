@@ -136,13 +136,13 @@ public class PlantsViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
         int icon;
         switch ((int) userPlant.plantType.type_id){ // placeholders icons
             case 1:
-                icon = R.drawable.baseline_settings_24;
+                icon = R.drawable.succulent;
                 break;
             case 2:
-                icon = R.drawable.home_24;
+                icon = R.drawable.tropical;
                 break;
             default:
-                icon = R.drawable.local_florist_24;
+                icon = R.drawable.kaktus;
         }
         viewHolder.typeIcon.setBackgroundResource(icon);
         viewHolder.vertMenu.setOnClickListener(new View.OnClickListener() {
